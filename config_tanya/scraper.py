@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup, Comment
-import bin_tanya.header as header
+import config_tanya.scraper_header as header
 import urllib.request
 import shutil
 import openpyxl as op

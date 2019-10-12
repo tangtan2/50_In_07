@@ -1,12 +1,12 @@
-from config_tanya.config import Config
-import bin_tanya.header as header
-from bin_tanya.hockey_reference_scraper import scrape1
+from config_tanya.config import ScraperConfig
+import config_tanya.scraper_header as header
+from config_tanya.scraper import scrape1
 import os
 
-script_name = 'hockey_reference_scraper'
+script_name = 'scraper'
 baseurl = 'https://www.hockey-reference.com'
 date = '082419'
-config1 = Config()
+config1 = ScraperConfig()
 config1.setconfig(script_name, baseurl, date)
 
 # Get team names
