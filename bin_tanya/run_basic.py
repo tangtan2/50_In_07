@@ -1,10 +1,9 @@
-from config_tanya.header import Team, Player
 from config_tanya.config import Config
 
 # Set up config object
 
-# Construct team objects
+# Get training data
 
-# Construct player objects for each team
+# Basic Model 1: Linear Regression with Stochastic Gradient Descent
 
-# Basic ML algorithm
+# Basic Model 2: Decision Tree Regression

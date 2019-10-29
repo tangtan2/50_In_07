@@ -12,7 +12,7 @@ def import_shortnames(config):
         columns = row.findAll('th')
         for item in columns:
             if item.find(text=True) and item['class'][0] == 'left':
-                teamnames.append(item.find(href=True)['href'][-4:-1])
+                teamnames.append(item.find(href=True)['href'][7:10])
     return teamnames
 
 

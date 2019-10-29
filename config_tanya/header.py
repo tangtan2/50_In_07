@@ -1,18 +1,18 @@
-class Team:
-
-    def __init__(self, name, filepath):
-        self.name = name
-        self.filepath = filepath
-
-    def getinfo(self):
-        i = 0
+import mysql.connector
 
 
-class Player:
+# Connect to MySQL
+def connect_db():
+    mydb = mysql.connector.connect(host='localhost',
+                                   user='root',
+                                   passwd='56819230',
+                                   database='50_In_07')
+    mycursor = mydb.cursor()
+    return mydb, mycursor
 
-    def __init__(self, name, filepath):
-        self.name = name
-        self.filepath = filepath
 
-    def getinfo(self):
-        i = 0
+# Disconnect from MySQL
+def disconnect_db(mydb, mycursor):
+    mydb.commit()
+    mycursor.close()
+    mydb.close()
