@@ -3,11 +3,12 @@ import mysql.connector
 
 # Connect to MySQL
 def connect_db():
-    mydb = mysql.connector.connect(host='localhost',
+    mydb = mysql.connector.connect(host='Tanyas-MacBook-Pro.local',
                                    user='root',
-                                   passwd='56819230',
-                                   database='50_In_07')
-    mycursor = mydb.cursor()
+                                   password='56819230',
+                                   database='50_In_07',
+                                   auth_plugin='mysql_native_password')
+    mycursor = mydb.cursor(buffered=True)
     return mydb, mycursor
 
 

@@ -29,6 +29,47 @@ for team in teams_short:
     team_players[team] = [rosterdata['Player'][i] for i in range(len(rosterdata['Player']))]
 
     # Create table in SQL
+    mycursor.execute(f"""
+    CREATE TABLE {team} (
+    season_start YEAR NOT NULL,
+    games_played INT NOT NULL,
+    wins INT,
+    losses INT,
+    ties INT,
+    overtime_losses INT,
+    points INT NOT NULL,
+    points_percentage DECIMAL(10, 3) NOT NULL,
+    simple_rating_system DECIMAL(10, 2) NOT NULL,
+    strength_of_schedule DECIMAL(10, 2) NOT NULL,
+    finish VARCHAR(15))
+    """)
+
+    # Iterate through each season and add entry to table
+    for i, season in enumerate(summarydata['Season']):
+        currentseason = int(season[0:4])
+        if currentseason < 2010:
+            break
+        if not summarydata.isna()['GP'][i]:
+            wins = summarydata['W'][i] if not summarydata.isna()['W'][i] else 0
+            losses = summarydata['L'][i] if not summarydata.isna()['L'][i] else 0
+            ties = summarydata['T'][i] if not summarydata.isna()['T'][i] else 0
+            otlosses = summarydata['OL'][i] if not summarydata.isna()['OL'][i] else 0
+            mycursor.execute(f"""
+            INSERT INTO {team} VALUES ({currentseason},
+            {summarydata['GP'][i]},
+            {wins},
+            {losses},
+            {ties},
+            {otlosses},
+            {summarydata['PTS'][i]},
+            {summarydata['PTS%'][i]},
+            {summarydata['SRS'][i]},
+            {summarydata['SOS'][i]},
+            '{summarydata['Finish'][i]}')
+            """)
+    mydb.commit()
+    mydb.close()
+    mycursor.close()
 
 # Create tables for each player
 player_folder = team_folder + "/players/"
