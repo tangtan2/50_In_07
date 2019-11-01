@@ -3,12 +3,14 @@ import config_tanya.scraper_header as header
 import urllib.request
 import shutil
 import openpyxl as op
+import os
+from config_tanya.config import ScraperConfig
 
 
-def scrape1(config, url, short_name):
+def scrape1(config, url1, short_name):
 
     # Find overall info for team
-    teampage = urllib.request.urlopen(url)
+    teampage = urllib.request.urlopen(url1)
     teamsoup = BeautifulSoup(teampage, 'html.parser')
     summarytable = teamsoup.find('table', {'class': 'sortable stats_table'}, id=short_name)
 
@@ -145,3 +147,43 @@ def scrape1(config, url, short_name):
             workbook.remove(workbook['temp'])
         workbook.save(playerdest)
         workbook.close()
+
+
+def scrape2(url1, short_name):
+    i = 0
+
+
+if __name__ == '__main__':
+
+    # Get team names
+    baseurl = 'https://www.hockey-reference.com'
+    teams_short = header.import_shortnames(baseurl)
+    teams_long = header.import_longnames(baseurl)
+
+    n = int(input('Enter version of scraper desired: '))
+    if n == 1:
+        # Set config object
+        baseurl = 'https://www.hockey-reference.com'
+        date = '101219'
+        config1 = ScraperConfig()
+        config1.setconfig(baseurl, date)
+
+        # Get team names
+        teams_short = header.import_shortnames(config1)
+        teams_long = header.import_longnames(config1)
+
+        # Create team urls
+        teams_url = []
+        for team in teams_short:
+            url = baseurl + '/teams/' + team + '/history.html'
+            teams_url.append(url)
+
+        # Get team info
+        os.mkdir(config1.dest)
+        os.mkdir(config1.dest + 'players/')
+        for url, name in zip(teams_url, teams_short):
+            scrape1(config1, url, name)
+    elif n == 2:
+        # Scrape data and insert into SQL database
+        for team in teams_short:
+            scrape2(baseurl, team)

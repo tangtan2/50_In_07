@@ -15,12 +15,3 @@ class ScraperConfig:
         self.dest = '/Users/tanyatang/Documents/Code/Python/50_In_07/data_tanya/data_raw/' + date + '/'
         for metric in extrametrics:
             self.playermetrics.append(metric)
-
-
-class Config:
-
-    def __init__(self):
-        i = 0
-
-    def setconfig(self):
-        i = 0

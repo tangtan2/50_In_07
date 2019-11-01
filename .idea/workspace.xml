@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02879971-1e30-406b-b572-550c604c9e92" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bin_tanya/run_model1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin_tanya/export_to_SQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin_tanya/export_to_SQL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin_tanya/run_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin_tanya/run_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin_tanya/run_scraper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_tanya/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_tanya/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config_tanya/header.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_tanya/header.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_tanya/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_tanya/scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_tanya/scraper_header.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_tanya/scraper_header.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.export_to_SQL">
+  <component name="RunManager" selected="Python.run_model1">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="50_In_07" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,7 +93,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run_scraper" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="run_basic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="50_In_07" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,10 +102,10 @@
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin_tanya" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin_tanya/run_scraper.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin_tanya/run_basic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -108,8 +114,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run_model1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="50_In_07" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin_tanya" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin_tanya/run_model1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.export_to_SQL" />
+      <item itemvalue="Python.run_basic" />
+      <item itemvalue="Python.run_model1" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run_model1" />
+        <item itemvalue="Python.run_basic" />
         <item itemvalue="Python.export_to_SQL" />
       </list>
     </recent_temporary>

@@ -2,9 +2,9 @@ from bs4 import BeautifulSoup
 import urllib.request
 
 
-def import_shortnames(config):
+def import_shortnames(baseurl):
     teamnames = []
-    url = config.baseurl + '/teams/'
+    url = baseurl + '/teams/'
     page = urllib.request.urlopen(url)
     soup = BeautifulSoup(page, 'html.parser')
     franchisetable = soup.find('table', {'class': 'sortable stats_table'}, id='active_franchises')
@@ -16,9 +16,9 @@ def import_shortnames(config):
     return teamnames
 
 
-def import_longnames(config):
+def import_longnames(baseurl):
     teamnames = []
-    url = config.baseurl + '/teams/'
+    url = baseurl + '/teams/'
     page = urllib.request.urlopen(url)
     soup = BeautifulSoup(page, 'html.parser')
     franchisetable = soup.find('table', {'class': 'sortable stats_table'}, id='active_franchises')
