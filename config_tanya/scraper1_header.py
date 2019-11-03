@@ -1,33 +1,4 @@
 from bs4 import BeautifulSoup
-import urllib.request
-
-
-def import_shortnames(baseurl):
-    teamnames = []
-    url = baseurl + '/teams/'
-    page = urllib.request.urlopen(url)
-    soup = BeautifulSoup(page, 'html.parser')
-    franchisetable = soup.find('table', {'class': 'sortable stats_table'}, id='active_franchises')
-    for row in franchisetable.findAll('tr'):
-        columns = row.findAll('th')
-        for item in columns:
-            if item.find(text=True) and item['class'][0] == 'left':
-                teamnames.append(item.find(href=True)['href'][7:10])
-    return teamnames
-
-
-def import_longnames(baseurl):
-    teamnames = []
-    url = baseurl + '/teams/'
-    page = urllib.request.urlopen(url)
-    soup = BeautifulSoup(page, 'html.parser')
-    franchisetable = soup.find('table', {'class': 'sortable stats_table'}, id='active_franchises')
-    for row in franchisetable.findAll('tr'):
-        columns = row.findAll('th')
-        for item in columns:
-            if item.find(text=True) and item['class'][0] == 'left':
-                teamnames.append(item.find(text=True))
-    return teamnames
 
 
 def get_row_data(cells, columns):

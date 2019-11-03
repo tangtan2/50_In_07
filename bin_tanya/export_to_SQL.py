@@ -71,6 +71,7 @@ for team in teams_short:
         # Parse data using pandas
         filename = player_folder + player + ".xlsx"
 
+        # If player is not a goalie, make regular table and add all entries from Excel sheet
         if player not in goalies[team]:
             try:
                 standard_data = pd.read_excel(filename, sheet_name='standard', skiprows=1, mangle_dupe_cols=True)
@@ -145,6 +146,8 @@ for team in teams_short:
 
             except Exception as e:
                 print(e)
+
+        # If player is a goalie, make goalie table and add all entries from Excel sheet
         else:
             try:
                 standard_data = pd.read_excel(filename, sheet_name='standard', skiprows=1, mangle_dupe_cols=True)
