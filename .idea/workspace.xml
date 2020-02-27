@@ -2,15 +2,787 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02879971-1e30-406b-b572-550c604c9e92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config_tanya/scraper1_header.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/game.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/game_goalie_stats.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/game_plays.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/game_plays_players.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/game_shifts.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/game_skater_stats.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/game_teams_stats.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/player_info.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/team_info.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/bin_tanya/export_to_SQL.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/bin_tanya/run_basic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/bin_tanya/run_model1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/config_tanya/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/config_tanya/header.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/config_tanya/scraper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/config_tanya/scraper1_header.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/ANA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/BOS.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/BUF.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/CAR.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/CBJ.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/CGY.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/CHI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/COL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/DAL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/DET.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/EDM.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/FLA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/LAK.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/MIN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/MTL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/NJD.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/NSH.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/NYI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/NYR.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/OTT.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/PHI.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/PHX.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/PIT.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/SJS.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/STL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/TBL.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/TOR.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/VAN.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/VEG.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/WPG.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/WSH.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/A.J. Greer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Aaron Ekblad.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Clendening.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Erne.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Gaudette.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Henrique.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Larsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Lowry.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Mascherin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adam Pelech.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Adrian Kempe.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alan Quine.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alec Martinez.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Aleksander Barkov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Biega.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Chiasson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Debrincat.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Galchenyuk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Goligoski.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Killorn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Lintuniemi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Nedeljkovic.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Ovechkin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Pietrangelo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Stalock.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alex Tuch.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alexander Edler.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alexander Kerfoot.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alexander Nylander.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alexander Radulov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alexander Steen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alexander Wennberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Alexandre Texier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Aliaksei Protas.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anders Lee.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anders Nilsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andre Burakovsky.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andreas Athanasiou.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andreas Johnsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrei Svechnikov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrei Vasilevskiy.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrej Sekera.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrew Cogliano.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrew Copp.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrew Ladd.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrew Mangiapane.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrew Peeke.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andrew Shaw.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Andy Andreoff.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anthony Beauvillier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anthony Bitetto.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anthony Cirelli.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anthony Duclair.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anthony Mantha.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anthony Stolarz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anton Khudobin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anton Lindholm.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anton Stralman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Anze Kopitar.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Artem Anisimov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Artemi Kniazev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Artturi Lehkonen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Austin Wagner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Austin Watson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Auston Matthews.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Beau Bennett.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ben Bishop.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ben Chiarot.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ben Harpur.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ben Thomas.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Blake Coleman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Blake Comeau.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Blake Wheeler.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Bo Horvat.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Bobby Ryan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Boo Nieves.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Boone Jenner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brad Marchand.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brad Richardson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Braden Holtby.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brady Skjei.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brady Tkachuk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brandon Baddock.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brandon Carlo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brandon Dubinsky.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brandon Montour.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brandon Pirri.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brandon Saad.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brandon Sutter.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brayden McNabb.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brayden Point.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brayden Schenn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Braydon Coburn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brendan Gallagher.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brendan Gaunce.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brendan Guhle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brendan Leipsic.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brendan Lemieux.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brendan Perlini.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brendan Smith.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brent Burns.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brent Seabrook.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brett Connolly.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brett Howden.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brett Kulak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brett Leason.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brett Lernout.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brett Pesce.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brett Ritchie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brian Dumoulin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brian Elliott.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brock Boeser.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brock McGinn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Brock Nelson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Bryan Little.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Bryan Rust.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cal Clutterbuck.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cal Petersen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cale Makar.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Calle Jarnkrok.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Calvin Pickard.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Calvin de Haan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cam Atkinson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cam Fowler.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cameron Gaunce.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carey Price.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carl Dahlstrom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carl Grundstrom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carl Gunnarsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carl Hagelin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carl Soderberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carson Soucy.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carter Hart.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Carter Verhaeghe.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Casey Cizikas.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Casey Mittelstadt.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cedric Paquette.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Chandler Stephenson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Charles Hudon.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Charlie Coyle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Charlie McAvoy.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Chase De Leo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Chris Kreider.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Chris Tierney.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Chris Wagner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Chris Wideman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Christian Djoos.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Christian Dvorak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Christian Fischer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Christian Jaros.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Christian Wolanin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Christoffer Ehn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Clark Bishop.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Claude Giroux.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Clayton Keller.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cody Ceci.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cody Eakin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Colin Miller.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Colin White.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Colin Wilson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Colton Parayko.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Colton Sceviour.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Colton Sissons.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor Brown.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor Carrick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor Clifton.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor Hellebuyck.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor Ingram.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor McDavid.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor McMichael.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Connor Murphy.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Conor Garland.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Corey Crawford.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Corey Perry.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Cory Schneider.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Craig Anderson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Craig Smith.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Curtis Lazar.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Curtis McElhinney.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dale Weise.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dalton Prout.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Damon Severson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dan Hamhuis.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Daniel Sprong.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dante Fabbro.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Danton Heinen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Darcy Kuemper.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Darnell Nurse.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Darren Helm.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/David Backes.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/David Krejci.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/David Pastrnak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/David Perron.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/David Savard.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Denis Gurianov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Denis Malgin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dennis Seidenberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Derek Forbort.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Derek Grant.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Derek Stepan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Derrick Pouliot.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Devan Dubnyk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Devin Shore.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Devon Toews.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dillon Dube.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dillon Heatherington.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dmitry Kulikov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dmitry Orlov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dominic Turgeon.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dominik Masin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dominik Simon.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dougie Hamilton.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Drew Doughty.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Duncan Keith.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dustin Brown.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dustin Byfuglien.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dylan Cozens.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dylan Demelo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dylan Gambrell.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dylan Larkin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dylan McIlrath.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dylan Sikura.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dylan Strome.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Dysin Mayo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Elias Lindholm.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Elias Pettersson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Elvis Merzlikins.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Eric Comrie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Eric Staal.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Erik Cernak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Erik Gudbranson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Erik Gustafsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Erik Haula.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Erik Johnson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Erik Karlsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Esa Lindell.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Evander Kane.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Evgeni Malkin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Evgenii Dadonov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Evgeny Kuznetsov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Filip Chytil.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Filip Forsberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Filip Hronek.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Francis Perron.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Frans Nielsen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Frederik Andersen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Frederik Gauthier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Gabriel Dumont.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Gabriel Landeskog.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Garret Sparks.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Garrett Wilson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Gemel Smith.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Greg McKegg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Greg Pateryn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Gustav Forsling.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Gustav Nyquist.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Hampus Lindholm.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Haydn Fleury.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Henri Jokiharju.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Henrik Borgstrom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Henrik Lundqvist.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Henrik Zetterberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Hudson Fasching.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ian Cole.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ian McCoshen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ilya Kovalchuk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ivan Barbashev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ivan Provorov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/J.T. Compher.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/J.T. Miller.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jaccob Slavin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jack Campbell.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jack Eichel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jack Hughes.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jack Johnson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jack Roslovic.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jacob De La Rose.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jacob Markstrom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jacob Middleton.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jacob Trouba.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jaden Schwartz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake Allen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake Bischoff.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake DeBrusk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake Guentzel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake Massie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake McCabe.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake Muzzin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jake Virtanen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jakob Chychrun.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jakob Silfverberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jakub Voracek.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jakub Vrana.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/James Neal.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/James Reimer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/James van Riemsdyk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jamie Benn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jamie McGinn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jamie Oleksiak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jani Hakanpaa.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jared McCann.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jared Spurgeon.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jaroslav Halak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jason Demers.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jason Dickinson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jason Spezza.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jason Zucker.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jay Bouwmeester.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jayce Hawryluk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jaycob Megna.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jean-Gabriel Pageau.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jeff Carter.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jeff Petry.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jeff Skinner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jesper Bratt.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jesper Fast.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jesperi Kotkaniemi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jesse Puljujarvi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jimmy Howard.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jimmy Vesey.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joakim Nordstrom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joakim Ryan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joe Pavelski.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joel Armia.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joel Edmundson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joel Eriksson Ek.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joey Daccord.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Johan Larsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/John Carlson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/John Gibson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/John Gilmour.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/John Hayden.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/John Klingberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/John Moore.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/John Tavares.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Johnny Boychuk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Johnny Gaudreau.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jon Merrill.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonas Brodin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonas Siegenthaler.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonathan Bernier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonathan Drouin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonathan Ericsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonathan Huberdeau.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonathan Quick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonathan Toews.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jonny Brodzinski.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joonas Donskoi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joonas Korpisalo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Binnington.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Eberle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Greenway.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Kyrou.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Martinook.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Nolan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Schmaltz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Staal.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Szwarz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jordan Weal.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Joseph Woll.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Anderson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Archibald.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Bailey.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Brown.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Jacobs.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Leivo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Manson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Josh Morrissey.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Jujhar Khaira.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Julius Honka.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Justin Abdelkader.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Justin Bailey.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Justin Braun.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Justin Faulk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Justin Holl.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Justin Kirkland.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Justin Schultz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Juuse Saros.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Juuso Valimaki.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kaapo Kakko.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Karl Alzner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kasperi Kapanen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Keith Yandle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kenny Agostino.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kevin Connauton.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kevin Fiala.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kevin Gravel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kevin Hayes.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kevin Labanc.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kevin Roy.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kevin Shattenkirk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Korbinian Holzer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kris Letang.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kris Russell.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kurtis Gabriel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kyle Brodziak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kyle Capobianco.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kyle Clifford.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kyle Connor.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kyle Okposo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kyle Palmieri.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Kyle Turris.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Lars Eller.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Laurent Brossoit.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Lawson Crouse.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Leo Komarov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Leon Draisaitl.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Lias Andersson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Libor Hajek.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Linus Ullmark.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Logan Couture.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Loui Eriksson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Louis Domingue.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Lucas Wallmark.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Lukas Sedlak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Luke Johnson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Luke Kunin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Luke Schenn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Luke Witkowski.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/MacKenzie MacEachern.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/MacKenzie Weegar.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mackenzie Blackwood.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Madison Bowey.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Malcolm Subban.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marc Staal.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marc-Andre Fleury.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marc-Edouard Vlasic.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marco Scandella.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marcus Foligno.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marcus Johansson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marcus Kallionkieli.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marcus Pettersson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Marcus Sorensen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mario Kempe.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mark Barberio.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mark Borowiecki.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mark Jankowski.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mark Pysyk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mark Scheifele.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mark Stone.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Markus Granlund.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Markus Nutivaara.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Martin Frk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Martin Hanzal.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Martin Marincin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mathew Barzal.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mathieu Joseph.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mathieu Perreault.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Benning.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Calvert.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Duchene.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Dumba.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Grzelcyk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Hunwick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Martin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Murray.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Nieto.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Niskanen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Puempel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matt Roy.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matthew Peca.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Matthew Tkachuk.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mattias Ekholm.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mattias Janmark.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Max Domi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Max McCormick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Max Pacioretty.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Amadio.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Bunting.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Dal Colle.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Del Zotto.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Frolik.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Grabner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Hutchinson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Michael Rasmussen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Micheal Ferland.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Miikka Salomaki.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mika Zibanejad.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mikael Backlund.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mikael Granlund.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mike Green.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mike Hoffman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mike Matheson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mike Reilly.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mike Smith.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mikhail Sergachev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mikkel Boedker.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mikko Koivu.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mikko Koskinen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mikko Rantanen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Milan Lucic.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Miles Wood.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mirco Mueller.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Miro Heiskanen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Mitchell Marner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Morgan Rielly.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nate Thompson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nathan Beaulieu.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nathan MacKinnon.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nathan Walker.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nazem Kadri.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nelson Nogier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nic Dowd.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nic Petan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nicholas Caamano.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Bjugstad.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Bonino.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Cousins.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Foligno.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Jensen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Leddy.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Paul.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Ritchie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Schmaltz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Seeler.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nick Shore.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nicklas Backstrom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nico Hischier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nicolas Aube-Kubel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nicolas Deslauriers.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nikita Gusev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nikita Kucherov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nikita Zadorov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Niklas Hjalmarsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nikolaj Ehlers.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nikolay Goldobin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nino Niederreiter.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Noah Hanifin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Nolan Patrick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Oliver Bjorkstrand.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Oliver Ekman-Larsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Oliver Kylington.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Olli Maatta.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ondrej Kase.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ondrej Palat.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Oscar Klefbom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Oskar Lindblom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Oskar Sundqvist.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/P.K. Subban.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Patric Hornqvist.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Patrice Bergeron.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Patrick Kane.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Patrik Laine.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Patrik Nemeth.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Paul Byron.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Paul LaDue.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Paul Stastny.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Pavel Buchnevich.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Pavel Shen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Pavel Zacha.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Pekka Rinne.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Peter Cehlarik.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Petr Mrazek.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Phil Kessel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Phil Varone.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Philip Broberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Philipp Grubauer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Phillip Danault.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Phillip Di Giuseppe.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Pierre-Luc Dubois.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Pontus Aberg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Quinn Hughes.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Radek Faksa.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Radko Gudas.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Rasmus Andersson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Rasmus Dahlin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Rasmus Ristolainen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Reilly Smith.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Rem Pitlick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Remi Elie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Richard Panik.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Rickard Rakell.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Riley Barber.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Riley Nash.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Rinat Valiev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Robby Fabbri.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Robert Bortuzzo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Robert Hagg.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Robert Thomas.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Robin Lehner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Rocco Grimaldi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Roman Josi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Roman Polak.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ron Hainsey.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Roope Hintz.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Callahan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Donato.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Dzingel.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Ellis.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Getzlaf.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Graves.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Hartman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Johansen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Kesler.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan McDonagh.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Miller.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Murray.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Nugent-Hopkins.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan O'Reilly.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Poehling.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Pulock.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Reaves.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Strome.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ryan Suter.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Saku Maenalanen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sam Bennett.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sam Carrick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sam Gagner.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sam Montembeault.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sam Reinhart.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sami Niku.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sami Vatanen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sammy Blais.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Samuel Girard.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Samuel Morin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Scott Harrington.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Scott Laughton.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Scott Mayfield.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Scott Wilson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sean Couturier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sean Kuraly.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sean Monahan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sebastian Aho.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Semyon Varlamov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Seth Jones.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Shayne Gostisbehere.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Shea Theodore.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Shea Weber.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sidney Crosby.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Slater Koekkoek.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sonny Milano.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Stephen Johns.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Steven Kampfer.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Steven Santini.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Steven Stamkos.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Sven Baertschi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/T.J. Oshie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/TJ Brodie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/TJ Tynan.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tanner Pearson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Taylor Hall.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Teddy Blueger.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Teuvo Teravainen.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Thatcher Demko.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Thomas Chabot.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Thomas Greiss.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Thomas Hickey.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Thomas Schemitsch.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tim Heed.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Timo Meier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tom Kuhnhackl.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tom Wilson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tomas Hertl.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tomas Jurco.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tomas Tatar.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tony DeAngelo.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Travis Boyd.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Travis Dermott.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Travis Hamonic.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Travis Konecny.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Travis Sanheim.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Travis Zajac.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Trevor Daley.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Trevor Lewis.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tristan Jarry.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Troy Terry.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tuukka Rask.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Bertuzzi.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Ennis.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Graovac.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Motte.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Myers.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Pitlick.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Seguin.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Toffoli.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyler Wotherspoon.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyrell Goulbourne.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyson Barrie.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Tyson Jost.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Valentin Zykov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Valtteri Filppula.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Victor Hedman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Victor Mete.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Victor Rask.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Victor Soderstrom.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Viktor Arvidsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ville Heinola.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Ville Husso.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vince Dunn.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vincent Trocheck.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vinnie Hinostroza.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vitek Vanecek.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vladimir Sobotka.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vladimir Tarasenko.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vladislav Gavrikov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vladislav Kamenev.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Vladislav Namestnikov.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Warren Foegele.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Wayne Simmonds.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Will Butcher.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/William Carrier.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/William Karlsson.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/William Nylander.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Yannick Weber.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zach Bogosian.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zach Gallant.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zach Hyman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zach Parise.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zach Sanford.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zach Trotman.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zach Werenski.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zack Kassian.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zack Smith.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zdeno Chara.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/082419/players/Zemgus Girgensons.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/data_raw/101219/ANA.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/templates/template_1.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deprecated/data_tanya/templates/template_2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/project_structure.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/50_In_07.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/50_In_07.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin_tanya/export_to_SQL.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin_tanya/export_to_SQL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin_tanya/run_model1.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin_tanya/run_model1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_tanya/header.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_tanya/header.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_tanya/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_tanya/scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_tanya/scraper_header.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin_tanya/export_to_SQL.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin_tanya/run_basic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin_tanya/run_model1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_tanya/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_tanya/header.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_tanya/scraper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_tanya/scraper1_header.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tanya/templates/template_1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_tanya/templates/template_2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/documentation_tanya.txt" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,25 +802,18 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin_tanya/run_scraper.py" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.run_model1">
+  <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="50_In_07" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,104 +835,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="export_to_SQL" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="50_In_07" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin_tanya" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin_tanya/export_to_SQL.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run_basic" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="50_In_07" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin_tanya" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin_tanya/run_basic.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run_model1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="50_In_07" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin_tanya" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin_tanya/run_model1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="scraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="50_In_07" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin_tanya" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/config_tanya/scraper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.export_to_SQL" />
-      <item itemvalue="Python.run_basic" />
-      <item itemvalue="Python.run_model1" />
-      <item itemvalue="Python.scraper" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.run_model1" />
-        <item itemvalue="Python.scraper" />
-        <item itemvalue="Python.run_basic" />
-        <item itemvalue="Python.export_to_SQL" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -197,5 +864,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2104" y="141" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582821492096">
+      <screen x="1680" y="-49" width="1920" height="1057" />
+    </state>
+    <state x="2104" y="141" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-49.1920.1057/0.23.1680.961@1680.-49.1920.1057" timestamp="1582821492096" />
+    <state x="2149" y="118" key="SettingsEditor" timestamp="1582821507402">
+      <screen x="1680" y="-49" width="1920" height="1057" />
+    </state>
+    <state x="2149" y="118" key="SettingsEditor/1680.-49.1920.1057/0.23.1680.961@1680.-49.1920.1057" timestamp="1582821507402" />
   </component>
 </project>
