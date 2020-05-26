@@ -1,5 +1,8 @@
 *.DS_Store
-*venv/
-*deprecated/
+*.venv
+*deprecated
 *.iml
-*.idea/
+*.idea
+*.vscode
+*.ipynb_checkpoints
+*__pycache__
