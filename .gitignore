@@ -3,6 +3,6 @@
 *deprecated
 *.iml
 *.idea
-*.vscode
 *.ipynb_checkpoints
 *__pycache__
+spark-warehouse
