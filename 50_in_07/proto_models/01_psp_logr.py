@@ -1,6 +1,7 @@
 import os
 import pyspark
-from pyspark.ml.classification import RandomForestClassifier
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.tuning import TrainValidationSplit, ParamGridBuilder
 from pyspark.ml.pipeline import Pipeline
 from pyspark.ml.feature import OneHotEncoderEstimator, StringIndexer, VectorAssembler
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
@@ -45,7 +46,7 @@ def get_psp_data_per_player(spark_session: pyspark.sql.SparkSession, player: int
 # create prototype logistic regression classification model to get probability that a player completes a shot
 def create_proto_model(psp_data: pyspark.sql.DataFrame, dump_folder: str, date: str, eval_log, player: int):
 
-    print('[INFO] creating random forest classification model for shot success probability prediction')
+    print('[INFO] creating logistic regression classification model for shot success probability prediction')
     print('count of training data entries: ' + str(psp_data.count()))
 
     # split data into training and test data
@@ -75,12 +76,21 @@ def create_proto_model(psp_data: pyspark.sql.DataFrame, dump_folder: str, date: 
                                outputCol='features').setHandleInvalid('keep')]
     stages += [StringIndexer(inputCol='winner',
                              outputCol='label').setHandleInvalid('keep')]
-    stages += [RandomForestClassifier(featuresCol='features',
-                                      labelCol='label',
-                                      numTrees=15,
-                                      maxDepth=8)]
+
+    # creating model, validating with single split and iteration, add to pipeline
+    lr = LogisticRegression(featuresCol='features',
+                            labelCol='label')
+    param = ParamGridBuilder()
+    param.addGrid(lr.elasticNetParam, [0, 0.5, 1.0],
+                  lr.fitIntercept, [False, True],
+                  lr.regParam, [0.2, 0.01])
+    stages += [TrainValidationSplit(estimator=lr,
+                                    estimatorParamMaps=param,
+                                    evaluator=MulticlassClassificationEvaluator(),
+                                    trainRatio=0.8)]
     pipeline = Pipeline(stages=stages)
 
+    # train model
     print('starting training...')
     pipeline_model = pipeline.fit(train)
     print('pipeline assembled and model trained')
@@ -101,7 +111,7 @@ def create_proto_model(psp_data: pyspark.sql.DataFrame, dump_folder: str, date: 
 
     # save predictions
     print('writing test prediction to log file...')
-    predictions.write.json(f'{dump_folder}/{date}_01_psp_rf_test_preds_json')
+    predictions.write.json(f'{dump_folder}/{date}_01_psp_logr_test_preds_json')
     print(f'model creation complete for player {player}')
 
 
@@ -114,7 +124,7 @@ if __name__ == '__main__':
     ids = get_player_ids(spark)
     print(f'[INFO] there are {ids.count()} players in the NHL')
     print(f'sample 1% of the total players and create prototype models for each player')
-    log = open(f'{dump_loc}/{curr_date}_01_psp_rf_evaluations.txt', 'w')
+    log = open(f'{dump_loc}/{curr_date}_01_psp_logr_evaluations.txt', 'w')
     for player_id in ids.select('player_id').sample(withReplacement=False,
                                                     fraction=0.01,
                                                     seed=2020).collect():
