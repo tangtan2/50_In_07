@@ -1,7 +1,7 @@
 from pyspark.sql.utils import CapturedException
 from py4j.protocol import Py4JJavaError
-import src.io.save_to_db as save
-from src.io.connections import start_spark, close_spark
+import project.common.save_to_db as save
+from project.common.connections import start_spark, close_spark
 
 # make filepaths for all relevant tables
 filepaths = []

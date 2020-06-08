@@ -5,7 +5,7 @@ from pyspark.ml.tuning import TrainValidationSplit, ParamGridBuilder
 from pyspark.ml.pipeline import Pipeline
 from pyspark.ml.feature import OneHotEncoderEstimator, StringIndexer, VectorAssembler
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
-from src.io.connections import start_spark, close_spark
+from project.common.connections import start_spark, close_spark
 
 
 # load all player ids using JDBC
@@ -22,20 +22,51 @@ def get_player_ids(spark_session: pyspark.sql.SparkSession) -> pyspark.sql.DataF
 # load required data for play success probability prediction using JDBC
 def get_psp_data_per_player(spark_session: pyspark.sql.SparkSession, player: int) -> pyspark.sql.DataFrame:
     # Get all events from plays table with a win/lose outcome and join with player info for each play
-    query = "(SELECT b.player_id::text, b.winner, a.team_id_for, a.team_id_against, " \
-            "b.event, a.x, a.y, a.period, a.period_type, a.period_time, a.rink_side " \
-            "FROM " \
-            "(SELECT * " \
-            "FROM game_play " \
-            "WHERE event = 'Goal' OR " \
-            "event = 'Missed Shot' OR " \
-            "event = 'Blocked Shot' OR " \
-            "event = 'Shot') AS a " \
-            "JOIN " \
-            "(SELECT * " \
-            "FROM game_player_play " \
-            f"WHERE player_id = {player}) AS b " \
-            "ON a.play_id = b.play_id) as psp_data"
+    query = f"""
+    (SELECT player_id, winner, d.game_id, team_id_for, team_id_against, event, goals_home AS goals_for, \
+           goals_away AS goals_against, x, y, period, period_type, period_time, rink_side \
+    FROM \
+        (SELECT b.player_id::text, b.winner, a.game_id, a.team_id_for, a.team_id_against, b.event, a.x, a.y, \
+               a.goals_home, a.goals_away, a.period, a.period_type, a.period_time, a.rink_side \
+        FROM \
+            (SELECT * \
+            FROM game_play \
+            WHERE event = 'Goal' \
+               OR event = 'Shot') AS a \
+        JOIN \
+            (SELECT * \
+            FROM game_player_play \
+            WHERE player_id = {player}) AS b \
+        ON a.play_id = b.play_id) AS c \
+    JOIN \
+        (SELECT game_id, team_id, "HoA" \
+        FROM game_team) AS d \
+    ON c.game_id = d.game_id \
+    AND c.team_id_for = d.team_id \
+    WHERE "HoA" = 'home' \
+    UNION \
+    SELECT player_id, winner, d.game_id, team_id_for, team_id_against, event, goals_away AS goals_for, \
+           goals_home AS goals_against, x, y, period, period_type, period_time, rink_side \
+    FROM \
+        (SELECT b.player_id::text, b.winner, a.game_id, a.team_id_for, a.team_id_against, b.event, a.x, a.y, \
+               a.goals_home, a.goals_away, a.period, a.period_type, a.period_time, a.rink_side \
+        FROM \
+            (SELECT * \
+            FROM game_play \
+            WHERE event = 'Goal' \
+               OR event = 'Shot') AS a \
+        JOIN \
+            (SELECT * \
+            FROM game_player_play \
+            WHERE player_id = {player}) AS b \
+        ON a.play_id = b.play_id) AS c \
+    JOIN \
+        (SELECT game_id, team_id, "HoA" \
+        FROM game_team) AS d \
+    ON c.game_id = d.game_id \
+    AND c.team_id_for = d.team_id \
+    WHERE "HoA" = 'away') AS psp_data\
+    """
     return spark_session.read.jdbc(url='jdbc:postgresql://localhost/50_in_07',
                                    table=query,
                                    properties={'user': 'tanyatang',
@@ -56,19 +87,19 @@ def create_proto_model(psp_data: pyspark.sql.DataFrame, dump_folder: str, date: 
     # create pipeline
     print('assembling pipeline...')
     stages = []
-    string_categories = ['period_type', 'rink_side']
+    string_categories = ['period_type']
     for cat in string_categories:
         string_ind = StringIndexer(inputCol=cat,
                                    outputCol=cat + 'Index').setHandleInvalid('keep')
         encoder = OneHotEncoderEstimator(inputCols=[string_ind.getOutputCol()],
                                          outputCols=[cat + 'Vector']).setHandleInvalid('keep')
         stages += [string_ind, encoder]
-    int_categories = ['team_id_for', 'team_id_against', 'period']
+    int_categories = ['team_id_for', 'team_id_against']
     for cat in int_categories:
         encoder = OneHotEncoderEstimator(inputCols=[cat],
                                          outputCols=[cat + 'Vector']).setHandleInvalid('keep')
         stages += [encoder]
-    numeric = ['x', 'y', 'period_time']
+    numeric = ['x', 'y', 'goals_for', 'goals_against']
 
     assembler_inputs = [c + 'Vector' for c in string_categories] + \
                        [c + 'Vector' for c in int_categories] + numeric
@@ -76,18 +107,12 @@ def create_proto_model(psp_data: pyspark.sql.DataFrame, dump_folder: str, date: 
                                outputCol='features').setHandleInvalid('keep')]
     stages += [StringIndexer(inputCol='winner',
                              outputCol='label').setHandleInvalid('keep')]
-    stages += [RandomForestClassifier(featuresCol='features',
-                                      labelCol='label',
-                                      numTrees=15,
-                                      maxDepth=8)]
-    pipeline = Pipeline(stages=stages)
 
     # creating model, validating with single split and iteration, add to pipeline
     rf = RandomForestClassifier(featuresCol='features',
                                 labelCol='label')
-    param = ParamGridBuilder()
-    param.addGrid(rf.maxDepth, [10, 20, 30],
-                  rf.numTrees, [10, 15, 25])
+    param = ParamGridBuilder().addGrid(rf.maxDepth, [10, 20, 30])\
+        .addGrid(rf.numTrees, [10, 15, 25]).build()
     stages += [TrainValidationSplit(estimator=rf,
                                     estimatorParamMaps=param,
                                     evaluator=MulticlassClassificationEvaluator(),
@@ -102,9 +127,7 @@ def create_proto_model(psp_data: pyspark.sql.DataFrame, dump_folder: str, date: 
     # make predictions using test data
     print('making predictions...')
     predictions = pipeline_model.transform(test)
-    predictions = predictions.select('player_id', 'winner', 'team_id_for', 'team_id_against', 'event',
-                                     'x', 'y', 'period', 'period_type', 'period_time', 'rink_side',
-                                     'label', 'rawPrediction', 'prediction', 'probability')
+    predictions = predictions.select('game_id', 'label', 'prediction', 'probability')
 
     # evaluate predictions
     evaluator = MulticlassClassificationEvaluator()
@@ -120,7 +143,7 @@ def create_proto_model(psp_data: pyspark.sql.DataFrame, dump_folder: str, date: 
 
 
 if __name__ == '__main__':
-    curr_date = '052820'
+    curr_date = '060720'
     dump_loc = '../../dumps/' + curr_date
     if not os.path.exists(dump_loc):
         os.mkdir(dump_loc)
