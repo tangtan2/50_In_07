@@ -1,10 +1,2 @@
 *.DS_Store
-*.venv
-*.iml
-*.idea
-*.ipynb_checkpoints
-*__pycache__
-*spark-warehouse
-*dumps
-ml/data/analytics/figs
-nhl_api/node_modules
+.vscode
