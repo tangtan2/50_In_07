@@ -27,8 +27,10 @@ module.exports = (app, express) => {
             `INSERT INTO teams (team_id, team_name, team_abbv, 
                                 active, year_established, 
                                 current_conference_id, current_division_id) 
-                  VALUES (${teamJSON["id"]}::integer, '${teamJSON["name"]}'::text, 
-                          '${teamJSON["abbreviation"]}'::text, ${teamJSON["active"]}::bool, 
+                  VALUES (${teamJSON["id"]}::integer, 
+                          '${teamJSON["name"]}'::text, 
+                          '${teamJSON["abbreviation"]}'::text, 
+                          ${teamJSON["active"]}::bool, 
                           ${teamJSON["firstYearOfPlay"]}::integer, 
                           ${teamJSON["conference"]["id"]}::integer, 
                           ${teamJSON["division"]["id"]}::integer)`,
@@ -64,7 +66,7 @@ module.exports = (app, express) => {
                           VALUES (${playerJSON["person"]["id"]}::integer,
                                  '${playerJSON["person"]["fullName"]}'::text, 
                                  ${playerJSON["jerseyNumber"]}::integer, 
-                                '${playerJSON["position"]["abbreviation"]}'::text)`,
+                                 '${playerJSON["position"]["abbreviation"]}'::text)`,
                     (error, results) => {
                       if (error) {
                         console.log(error["detail"]);
@@ -117,11 +119,9 @@ module.exports = (app, express) => {
                             alternate_captain = ${playerJSON["alternateCaptain"]}::boolean, 
                             shoot_catch = '${playerJSON["shootsCatches"]}' 
                       WHERE player_id = ${playerID}`,
-                    (error, results) => {
+                    (error1, results1) => {
                       if (error) {
-                        console.log(error["detail"]);
-                      } else {
-                        console.log(message);
+                        console.log(error1["detail"]);
                       }
                     }
                   );
@@ -206,6 +206,53 @@ module.exports = (app, express) => {
       }
     );
     res.send("Season winners updated.");
+  });
+
+  api.get("/update_games_per_season", (req, res) => {
+    pool.query(
+      `SELECT season_id 
+         FROM seasons`,
+      (error, results) => {
+        if (!error) {
+          results.rows.map((row) => {
+            util.getGamesPerSeason((err, response, data, seasonID) => {
+              if (!err) {
+                try {
+                  dataJSON = JSON.parse(data);
+                  dataJSON = dataJSON["dates"];
+                  dataJSON.map((dateJSON) => {
+                    dateJSON = dateJSON["games"];
+                    dateJSON.map((gameJSON) => {
+                      pool.query(
+                        `INSERT INTO games (game_id, season_id, category_id, 
+                                            date_time_GMT, away_team_id, 
+                                            home_team_id, away_goals, home_goals) 
+                              VALUES (${gameJSON["gamePk"]}::integer, 
+                                      '${gameJSON["season"]}'::text, 
+                                      '${gameJSON["gameType"]}'::text, 
+                                      '${gameJSON["gameDate"]}'::timestamp, 
+                                      ${gameJSON["teams"]["away"]["team"]["id"]}, 
+                                      ${gameJSON["teams"]["home"]["team"]["id"]}, 
+                                      ${gameJSON["teams"]["away"]["score"]}, 
+                                      ${gameJSON["teams"]["home"]["score"]})`,
+                        (error1, results1) => {
+                          if (error1) {
+                            console.log(error["detail"]);
+                          }
+                        }
+                      );
+                    });
+                  });
+                } catch {
+                  console.log(seasonID + " not updated");
+                }
+              }
+            }, row["season_id"]);
+          });
+        }
+      }
+    );
+    res.send("Games updated per season.");
   });
 
   return api;

@@ -39,12 +39,20 @@ var getSeasonWinner = (cb, seasonID) => {
   });
 };
 
+var getGamesPerSeason = (cb, seasonID) => {
+  var url = config.baseURL + "schedule?season=" + seasonID;
+  request(url, (error, response, body) => {
+    cb(error, response, body, seasonID);
+  });
+};
+
 var nhlAPIObject = {
   getTeams: getTeams,
   getPlayersPerTeam: getPlayersPerTeam,
   getPlayer: getPlayer,
   getSeasons: getSeasons,
   getSeasonWinner: getSeasonWinner,
+  getGamesPerSeason: getGamesPerSeason,
 };
 
 module.exports = nhlAPIObject;
