@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 import config from "../config/baseConfig";
 
 const getTeams = (): Promise<JSON> =>
@@ -114,4 +115,4 @@ const nhlAPIObject = {
   getBoxscoreByGameID: getBoxscoreByGameID,
 };
 
-export default nhlAPIObject;
+export { nhlAPIObject };

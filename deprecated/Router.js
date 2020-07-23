@@ -1,4 +1,4 @@
-const util = require("../external/routes").default;
+const util = require("../server/routes").default;
 const pgPool = require("pg").Pool;
 const pool = new pgPool({
   user: "tanyatang",
