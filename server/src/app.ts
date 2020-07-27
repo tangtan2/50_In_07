@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.send();
   console.log("Server started...");
 });

@@ -10,10 +10,12 @@ const pool: Pool = new Pool({
 });
 
 const router = express.Router();
-router.get("/", (req, res) => {
+router.get("/", (_, res) => {
   res.send("Access NHL API data.");
   console.log("You are at the root page.");
 });
+
 router.get("/update_players", require("./updatePlayers").default(pool));
+router.get("/update_seasons", require("./updateSeasons").default(pool));
 
 export default router;

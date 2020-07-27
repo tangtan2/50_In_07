@@ -1,30 +1,30 @@
-const fetch = require("node-fetch");
+import fetch, { Response } from "node-fetch";
 import config from "../config/baseConfig";
 
 const getTeams = (): Promise<JSON> =>
   fetch(config.baseURL + "teams/")
-    .then((response) => {
+    .then((response: Response) => {
       return response.json();
     })
-    .catch((error) => console.log(error));
+    .catch((error: Error) => console.log(error));
 
 const getRosterByTeamID = (params: { teamID: number }): Promise<JSON> =>
   fetch(config.baseURL + "teams/" + params.teamID + "/roster")
-    .then((response) => {
+    .then((response: Response) => {
       return response.json();
     })
-    .catch((error) => console.log(error));
+    .catch((error: Error) => console.log(error));
 
 const getPlayerByID = (params: { playerID: number }): Promise<JSON> =>
   fetch(config.baseURL + "people/" + params.playerID)
-    .then((response) => {
+    .then((response: Response) => {
       return response.json();
     })
-    .catch((error) => console.log(error));
+    .catch((error: Error) => console.log(error));
 
 const getSeasons = (): Promise<JSON> =>
   fetch(config.baseURL + "seasons")
-    .then((response) => response.json())
+    .then((response: Response) => response.json())
     .catch((error) => console.log(error));
 
 const getPlayoffGamesBySeasonID = (params: {
@@ -35,13 +35,13 @@ const getPlayoffGamesBySeasonID = (params: {
       "tournaments/playoffs?expand=round.series,schedule.game.seriesSummary&season=" +
       params.seasonID
   )
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const getGamesBySeasonID = (params: { seasonID: number }): Promise<JSON> =>
   fetch(config.baseURL + "schedule?season=" + params.seasonID)
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const getRosterByTeamIDAndSeasonID = (params: {
   teamID: number;
@@ -54,8 +54,8 @@ const getRosterByTeamIDAndSeasonID = (params: {
       "?expand=team.roster&season=" +
       params.seasonID
   )
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const getStatsSingleSeasonByPlayerIDAndSeasonID = (params: {
   playerID: number;
@@ -68,8 +68,8 @@ const getStatsSingleSeasonByPlayerIDAndSeasonID = (params: {
       "/stats?stats=statsSingleSeason&season=" +
       params.seasonID
   )
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const getStatsSingleSeasonByTeamIDAndSeasonID = (params: {
   teamID: number;
@@ -82,23 +82,23 @@ const getStatsSingleSeasonByTeamIDAndSeasonID = (params: {
       "/stats?stats=statsSingleSeason&season=" +
       params.seasonID
   )
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const getFeedByGameID = (params: { gameID: number }): Promise<JSON> =>
   fetch(config.baseURL + "game/" + params.gameID + "/feed/live")
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const getBoxscoreByGameID = (params: { gameID: number }): Promise<JSON> =>
   fetch(config.baseURL + "game/" + params.gameID + "/boxscore")
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const getLinescoreByGameID = (params: { gameID: number }): Promise<JSON> =>
   fetch(config.baseURL + "game/" + params.gameID + "/linescore")
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((response: Response) => response.json())
+    .catch((error: Error) => console.log(error));
 
 const nhlAPIObject = {
   getTeams: getTeams,
