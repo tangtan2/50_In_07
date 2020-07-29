@@ -38,14 +38,14 @@ const getPlayoffGamesBySeasonID = (params: {
     .then((response: Response) => response.json())
     .catch((error: Error) => console.log(error));
 
-const getGamesBySeasonID = (params: { seasonID: number }): Promise<JSON> =>
+const getGamesBySeasonID = (params: { seasonID: string }): Promise<JSON> =>
   fetch(config.baseURL + "schedule?season=" + params.seasonID)
     .then((response: Response) => response.json())
     .catch((error: Error) => console.log(error));
 
 const getRosterByTeamIDAndSeasonID = (params: {
   teamID: number;
-  seasonID: number;
+  seasonID: string;
 }): Promise<JSON> =>
   fetch(
     config.baseURL +
@@ -59,7 +59,7 @@ const getRosterByTeamIDAndSeasonID = (params: {
 
 const getStatsSingleSeasonByPlayerIDAndSeasonID = (params: {
   playerID: number;
-  seasonID: number;
+  seasonID: string;
 }): Promise<JSON> =>
   fetch(
     config.baseURL +
@@ -73,7 +73,7 @@ const getStatsSingleSeasonByPlayerIDAndSeasonID = (params: {
 
 const getStatsSingleSeasonByTeamIDAndSeasonID = (params: {
   teamID: number;
-  seasonID: number;
+  seasonID: string;
 }): Promise<JSON> =>
   fetch(
     config.baseURL +

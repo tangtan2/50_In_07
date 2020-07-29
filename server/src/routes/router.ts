@@ -15,7 +15,27 @@ router.get("/", (_, res) => {
   console.log("You are at the root page.");
 });
 
-router.get("/update_players", require("./updatePlayers").default(pool));
-router.get("/update_seasons", require("./updateSeasons").default(pool));
+router.get(
+  "/update_active_players",
+  require("./updateActivePlayers").default(pool)
+);
+router.get("/add_seasons", require("./addSeasons").default(pool));
+router.get("/add_season_games", require("./addSeasonGames").default(pool));
+router.get(
+  "/add_goalie_stats_per_season",
+  require("./addGoalieStatsPerSeason").default(pool)
+);
+router.get(
+  "/add_player_stats_per_season",
+  require("./addPlayerStatsPerSeason").default(pool)
+);
+router.get(
+  "/add_team_stats_per_season",
+  require("./addTeamStatsPerSeason").default(pool)
+);
+router.get(
+  "/update_results_per_game",
+  require("./updateResultsPerGame").default(pool)
+);
 
 export default router;
