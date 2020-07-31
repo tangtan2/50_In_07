@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import config from "./config/baseConfig";
+import { router } from "./routes/router";
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.get("/", (_, res) => {
   console.log("Server started...");
 });
 
-app.use("/externalAPI", require("./routes/router").default);
+app.use("/externalAPI", router);
 
 app.listen(config.port, (err) => {
   if (err) {
