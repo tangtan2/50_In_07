@@ -245,7 +245,115 @@ const addGameResultsFromNHLAPI = async (
   nhlAPIObject
     .getFeedByGameID({ gameID: gameID })
     .then((gameFeedJSON) => {
-      // call functions
+      addGameResultsDB(gameFeedJSON["liveData"]["linescore"], pool);
+      addGameTeamStatsDB(
+        gameID,
+        "A",
+        gameFeedJSON["liveData"]["linescore"]["teams"]["away"]["goals"] >
+          gameFeedJSON["liveData"]["linescore"]["teams"]["home"]["goals"],
+        gameFeedJSON["liveData"]["linescore"]["teams"]["away"]["goaliePulled"],
+        gameFeedJSON["liveData"]["boxscore"]["teams"]["away"],
+        pool
+      );
+      addGameTeamStatsDB(
+        gameID,
+        "H",
+        gameFeedJSON["liveData"]["linescore"]["teams"]["home"]["goals"] >
+          gameFeedJSON["liveData"]["linescore"]["teams"]["away"]["goals"],
+        gameFeedJSON["liveData"]["linescore"]["teams"]["home"]["goaliePulled"],
+        gameFeedJSON["liveData"]["boxscore"]["teams"]["home"],
+        pool
+      );
+      for (const [_, playerJSON] of Object.entries(
+        gameFeedJSON["liveData"]["boxscore"]["teams"]["away"][
+          "players"
+        ] as Record<string, JSON>
+      )) {
+        if (playerJSON["position"]["abbreviation"] == "G") {
+          addGameGoalieStatsDB(
+            gameID,
+            gameFeedJSON["liveData"]["boxscore"]["teams"]["away"]["team"]["id"],
+            playerJSON,
+            pool
+          );
+        } else {
+          addGamePlayerStatsDB(
+            gameID,
+            gameFeedJSON["liveData"]["boxscore"]["teams"]["away"]["team"]["id"],
+            playerJSON,
+            pool
+          );
+        }
+      }
+      for (const [_, playerJSON] of Object.entries(
+        gameFeedJSON["liveData"]["boxscore"]["teams"]["home"][
+          "players"
+        ] as Record<string, JSON>
+      )) {
+        if (playerJSON["position"]["abbreviation"] == "G") {
+          addGameGoalieStatsDB(
+            gameID,
+            gameFeedJSON["liveData"]["boxscore"]["teams"]["home"]["team"]["id"],
+            playerJSON,
+            pool
+          );
+        } else {
+          addGamePlayerStatsDB(
+            gameID,
+            gameFeedJSON["liveData"]["boxscore"]["teams"]["home"]["team"]["id"],
+            playerJSON,
+            pool
+          );
+        }
+      }
+      gameFeedJSON["liveData"]["plays"]["allPlays"].map((playJSON: JSON) => {
+        if (
+          playJSON["result"]["eventTypeId"] ==
+          ("GOAL" ||
+            "PENALTY" ||
+            "SHOT" ||
+            "MISSED_SHOT" ||
+            "BLOCKED_SHOT" ||
+            "HIT" ||
+            "GIVEAWAY" ||
+            "TAKEAWAY" ||
+            "FACEOFF")
+        ) {
+          addGamePlayDB(
+            gameID,
+            gameFeedJSON["liveData"]["boxscore"]["teams"]["home"]["teams"]["id"]
+              ? playJSON["team"]["id"] ==
+                  gameFeedJSON["liveData"]["boxscore"]["teams"]["away"][
+                    "teams"
+                  ]["id"]
+              : gameFeedJSON["liveData"]["boxscore"]["teams"]["away"]["teams"][
+                  "id"
+                ],
+            gameFeedJSON["liveData"]["boxscore"]["teams"]["home"]["team"]["id"],
+            gameFeedJSON["liveData"]["boxscore"]["teams"]["away"]["team"]["id"],
+            playJSON,
+            pool
+          );
+          if (playJSON["result"]["eventTypeId"] == "GOAL") {
+            addGameGoalAuxInfoDB(playJSON, pool);
+          } else if (
+            playJSON["result"]["eventTypeId"] == ("PENALTY" || "SHOT")
+          ) {
+            addGameShotOrPenaltyAuxInfoDB(
+              playJSON["result"]["secondaryType"],
+              pool
+            );
+          }
+        }
+        playJSON["players"].map((playPlayerJSON: JSON) => {
+          addGamePlayPlayerDB(
+            `${gameID}_${playJSON["about"]["eventIdx"]}`,
+            gameID,
+            playPlayerJSON,
+            pool
+          );
+        });
+      });
     })
     .catch((err) => console.log(err));
 };
