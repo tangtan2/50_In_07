@@ -1,118 +1,22 @@
-import fetch, { Response } from "node-fetch";
-import config from "../config/baseConfig";
+import express from "express";
+import testConfig from "../config/TestConfig";
+import { Pool } from "pg";
 
-const getTeams = (): Promise<JSON> =>
-  fetch(config.baseURL + "teams/")
-    .then((response: Response) => {
-      return response.json();
-    })
-    .catch((error: Error) => console.log(error));
+const pool: Pool = new Pool({
+  user: testConfig.user,
+  host: testConfig.host,
+  database: testConfig.database,
+  password: testConfig.password,
+  port: testConfig.dbport,
+});
 
-const getRosterByTeamID = (params: { teamID: number }): Promise<JSON> =>
-  fetch(config.baseURL + "teams/" + params.teamID + "/roster")
-    .then((response: Response) => {
-      return response.json();
-    })
-    .catch((error: Error) => console.log(error));
+const router = express.Router();
+router.get("/", (_, res) => {
+  res.send("Access NHL API data.");
+  console.log("You are at the root page.");
+});
 
-const getPlayerByID = (params: { playerID: number }): Promise<JSON> =>
-  fetch(config.baseURL + "people/" + params.playerID)
-    .then((response: Response) => {
-      return response.json();
-    })
-    .catch((error: Error) => console.log(error));
+router.get("/teams", require("./getAllTeams").default(pool));
+router.get("/seasons", require("./getAllSeasons").default(pool));
 
-const getSeasons = (): Promise<JSON> =>
-  fetch(config.baseURL + "seasons")
-    .then((response: Response) => response.json())
-    .catch((error) => console.log(error));
-
-const getPlayoffGamesBySeasonID = (params: {
-  seasonID: number;
-}): Promise<JSON> =>
-  fetch(
-    config.baseURL +
-      "tournaments/playoffs?expand=round.series,schedule.game.seriesSummary&season=" +
-      params.seasonID
-  )
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const getGamesBySeasonID = (params: { seasonID: string }): Promise<JSON> =>
-  fetch(config.baseURL + "schedule?season=" + params.seasonID)
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const getRosterByTeamIDAndSeasonID = (params: {
-  teamID: number;
-  seasonID: string;
-}): Promise<JSON> =>
-  fetch(
-    config.baseURL +
-      "teams/" +
-      params.teamID +
-      "?expand=team.roster&season=" +
-      params.seasonID
-  )
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const getStatsSingleSeasonByPlayerIDAndSeasonID = (params: {
-  playerID: number;
-  seasonID: string;
-}): Promise<JSON> =>
-  fetch(
-    config.baseURL +
-      "people/" +
-      params.playerID +
-      "/stats?stats=statsSingleSeason&season=" +
-      params.seasonID
-  )
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const getStatsSingleSeasonByTeamIDAndSeasonID = (params: {
-  teamID: number;
-  seasonID: string;
-}): Promise<JSON> =>
-  fetch(
-    config.baseURL +
-      "teams/" +
-      params.teamID +
-      "/stats?stats=statsSingleSeason&season=" +
-      params.seasonID
-  )
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const getFeedByGameID = (params: { gameID: number }): Promise<JSON> =>
-  fetch(config.baseURL + "game/" + params.gameID + "/feed/live")
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const getBoxscoreByGameID = (params: { gameID: number }): Promise<JSON> =>
-  fetch(config.baseURL + "game/" + params.gameID + "/boxscore")
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const getLinescoreByGameID = (params: { gameID: number }): Promise<JSON> =>
-  fetch(config.baseURL + "game/" + params.gameID + "/linescore")
-    .then((response: Response) => response.json())
-    .catch((error: Error) => console.log(error));
-
-const nhlAPIObject = {
-  getTeams: getTeams,
-  getRosterByTeamID: getRosterByTeamID,
-  getPlayerByID: getPlayerByID,
-  getSeasons: getSeasons,
-  getPlayoffGamesBySeasonID: getPlayoffGamesBySeasonID,
-  getGamesBySeasonID: getGamesBySeasonID,
-  getRosterByTeamIDAndSeasonID: getRosterByTeamIDAndSeasonID,
-  getStatsSingleSeasonByPlayerIDAndSeasonID: getStatsSingleSeasonByPlayerIDAndSeasonID,
-  getStatsSingleSeasonByTeamIDAndSeasonID: getStatsSingleSeasonByTeamIDAndSeasonID,
-  getLinescoreByGameID: getLinescoreByGameID,
-  getFeedByGameID: getFeedByGameID,
-  getBoxscoreByGameID: getBoxscoreByGameID,
-};
-
-export { nhlAPIObject };
+export default router;

@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
-import config from "./config/baseConfig";
-import { router } from "./routes/router";
+import config from "./config/TestConfig";
+import router from "./routes";
 
 const app = express();
 
@@ -16,10 +16,10 @@ app.get("/", (_, res) => {
 
 app.use("/externalAPI", router);
 
-app.listen(config.port, (err) => {
+app.listen(config.apiport, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("Server listening on port " + config.port);
+    console.log("Server listening on port " + config.apiport);
   }
 });
