@@ -1,9 +1,0 @@
-.venv
-.idea
-*.iml
-dumps
-*.ipynb_checkpoints
-spark-warehouse
-*.DS_Store
-*data/analytics/figs
-*__pycache__
