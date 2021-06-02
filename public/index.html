@@ -13,5 +13,39 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script>
+      var viz;
+      function clearViz() {
+        if (viz) {
+          viz.dispose();
+          viz = null;
+        }
+      }
+      function initPlayLocationViz(container, options) {
+        const vizUrl =
+          "https://public.tableau.com/views/50_in_07/GamePlayLocationDashboard?:language=en-US&:display_count=n&:origin=viz_share_link";
+        clearViz();
+        viz = new tableau.Viz(container, vizUrl, options);
+      }
+      function initPlayerViz(container, options) {
+        const vizUrl =
+          "https://public.tableau.com/views/50_in_07/PlayerStatisticsDashboard?:language=en-US&:display_count=n&:origin=viz_share_link";
+        clearViz();
+        viz = new tableau.Viz(container, vizUrl, options);
+      }
+      function initGoalieViz(container, options) {
+        const vizUrl =
+          "https://public.tableau.com/views/50_in_07/AndersenDashboard?:language=en-US&:display_count=n&:origin=viz_share_link";
+        clearViz();
+        viz = new tableau.Viz(container, vizUrl, options);
+      }
+      function initTeamViz(container, options) {
+        const vizUrl =
+          "https://public.tableau.com/views/50_in_07/TeamDashboard?:language=en-US&:display_count=n&:origin=viz_share_link";
+        clearViz();
+        viz = new tableau.Viz(container, vizUrl, options);
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,9 @@
+.menu-item {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
