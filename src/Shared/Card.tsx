@@ -2,30 +2,35 @@ import React from "react";
 
 type Props = {
   title: string;
-  defaultTab: string;
-  tabs: { tabName: string; body: any }[];
+  titleAlign: "center" | "left" | "right";
+  titleSize: number;
 };
-type State = {
-  activeTab: string;
-};
+type State = {};
 
 export default class Card extends React.Component<Props, State> {
-  state = { activeTab: this.props.defaultTab };
-
   render() {
     return (
       <div
         style={{
-          border: "1px solid lightgrey",
+          border: "2px solid #1b4f72",
           borderRadius: "5px",
           padding: "10px",
           backgroundColor: "white",
+          boxShadow: "2px 2px 1px 0.5px #1b4f72",
+          flex: 1,
         }}
       >
-        <div>{this.props.title}</div>
-        {this.props.tabs.map((tab) => {
-          return <div>{tab.tabName}</div>;
-        })}
+        <div
+          style={{
+            fontSize: this.props.titleSize,
+            marginBottom: "10px",
+            textAlign: this.props.titleAlign,
+            borderBottom: "1px solid lightgrey",
+          }}
+        >
+          {this.props.title}
+        </div>
+        {this.props.children}
       </div>
     );
   }
