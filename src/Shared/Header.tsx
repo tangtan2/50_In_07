@@ -1,4 +1,5 @@
 import React from "react";
+import Menu from "./Menu";
 import menu_icon from "../images/menu_icon.png";
 
 type Props = {};
@@ -68,95 +69,7 @@ export default class Header extends React.Component<Props, State> {
             </div>
           </div>
         </div>
-        {this.state.menuOpen && (
-          <div
-            style={{
-              marginTop: "10px",
-              marginRight: "10px",
-              border: "1px solid lightgrey",
-              backgroundColor: "white",
-              borderRadius: "5px",
-              padding: "10px",
-              boxShadow: "1px 1px 3px 0.5px lightgrey",
-              right: 0,
-              position: "absolute",
-            }}
-          >
-            <div
-              style={{
-                padding: "10px",
-              }}
-            >
-              Home
-            </div>
-            <div
-              style={{
-                width: "100%",
-                borderBottom: "1px solid lightgrey",
-              }}
-            />
-            <div
-              style={{
-                padding: "10px",
-              }}
-            >
-              Play Location Analysis
-            </div>
-            <div
-              style={{
-                width: "100%",
-                borderBottom: "1px solid lightgrey",
-              }}
-            />
-            <div
-              style={{
-                padding: "10px",
-              }}
-            >
-              Player Stats
-            </div>
-            <div
-              style={{
-                width: "100%",
-                borderBottom: "1px solid lightgrey",
-              }}
-            />
-            <div
-              style={{
-                padding: "10px",
-              }}
-            >
-              Goalie Stats
-            </div>
-            <div
-              style={{
-                width: "100%",
-                borderBottom: "1px solid lightgrey",
-              }}
-            />
-            <div
-              style={{
-                padding: "10px",
-              }}
-            >
-              Team Stats
-            </div>
-            <div
-              style={{
-                width: "100%",
-                borderBottom: "1px solid lightgrey",
-              }}
-            />
-            <div
-              style={{
-                padding: "10px",
-                fontStyle: "oblique",
-              }}
-            >
-              Make a Prediction!
-            </div>
-          </div>
-        )}
+        {this.state.menuOpen && <Menu />}
       </div>
     );
   }
