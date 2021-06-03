@@ -45,10 +45,26 @@ export default class PageHome extends React.Component<Props, State> {
   }
 
   async componentDidMount() {
+    await this.handleGetPlayerData();
+    await this.handleGetSeasonStatsData();
+    const playerData = this.playerDataList[0];
+    const seasonData = this.seasonDataList[0];
+    this.setState({
+      playerStats: playerData,
+      seasonStats: seasonData,
+      selectedPlayer: playerData?.firstName + " " + playerData?.lastName,
+      selectedSeason: seasonData?.season + "",
+    });
+  }
+
+  async handleGetPlayerData() {
     this.playerDataList = await APIClient.getPlayers();
     this.playerNamesList = this.playerDataList.map(
       (x) => x?.firstName + " " + x?.lastName
     );
+  }
+
+  async handleGetSeasonStatsData() {
     this.seasonDataList = await APIClient.getSeasonStats();
     this.seasonDataList.map((x) => {
       if (x !== null) {
@@ -58,14 +74,6 @@ export default class PageHome extends React.Component<Props, State> {
       return null;
     });
     this.seasonNamesList = this.seasonDataList.map((x) => x?.season + "");
-    const playerData = this.playerDataList[0];
-    const seasonData = this.seasonDataList[0];
-    this.setState({
-      playerStats: playerData,
-      seasonStats: seasonData,
-      selectedPlayer: playerData?.firstName + " " + playerData?.lastName,
-      selectedSeason: seasonData?.season + "",
-    });
   }
 
   handleSelectPlayer(player: Option) {
