@@ -116,7 +116,9 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>EV-GGA Ratio:</div>
+            <div>
+              EV-GGA Ratio<sup style={{ fontSize: "7pt" }}>(1)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.evGGARatio}</div>
           </div>
@@ -127,7 +129,9 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Power Play Percentage:</div>
+            <div>
+              Power Play Percentage<sup style={{ fontSize: "7pt" }}>(2)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.powerPlayPercentage}</div>
           </div>
@@ -180,7 +184,9 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Penalty Kill Percentage:</div>
+            <div>
+              Penalty Kill Percentage<sup style={{ fontSize: "7pt" }}>(3)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.penaltyKillPercentage}</div>
           </div>
@@ -213,7 +219,10 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Number of Wins (Scored First):</div>
+            <div>
+              Number of Wins (Scored First)
+              <sup style={{ fontSize: "7pt" }}>(4)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.winScoreFirst}</div>
           </div>
@@ -224,7 +233,10 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Number of Wins (Opponent Scored First):</div>
+            <div>
+              Number of Wins (Opponent Scored First)
+              <sup style={{ fontSize: "7pt" }}>(4)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.winOppScoreFirst}</div>
           </div>
@@ -235,7 +247,10 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Number of Wins (First Period Lead):</div>
+            <div>
+              Number of Wins (First Period Lead)
+              <sup style={{ fontSize: "7pt" }}>(4)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.winLeadFirstPer}</div>
           </div>
@@ -246,7 +261,10 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Number of Wins (Second Period Lead):</div>
+            <div>
+              Number of Wins (Second Period Lead)
+              <sup style={{ fontSize: "7pt" }}>(4)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.winLeadSecondPer}</div>
           </div>
@@ -257,7 +275,10 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Number of Wins (Outshot Opponent):</div>
+            <div>
+              Number of Wins (Outshot Opponent)
+              <sup style={{ fontSize: "7pt" }}>(4)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.winOutshootOpp}</div>
           </div>
@@ -268,7 +289,10 @@ const SeasonSummary = (props: Props) => {
               flexDirection: "row",
             }}
           >
-            <div>Number of Wins (Outshot By Opponent):</div>
+            <div>
+              Number of Wins (Outshot By Opponent)
+              <sup style={{ fontSize: "7pt" }}>(4)</sup>:
+            </div>
             <Spacer type="column" size="small" />
             <div>{props.seasonStats.winOutshotByOpp}</div>
           </div>

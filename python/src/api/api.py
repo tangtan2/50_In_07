@@ -1,10 +1,13 @@
-import numpy as np
+import pandas as pd
 from flask import Flask, request
+from flask_cors import CORS
 import pickle
 import psycopg2
 from configparser import ConfigParser
+import json
 
 app = Flask(__name__)
+CORS(app)
 
 
 def select_data(command, filename='database.ini', section='postgresql'):
@@ -28,7 +31,6 @@ def select_data(command, filename='database.ini', section='postgresql'):
         results = list(map(lambda x: x[0], cursor.fetchall()))
         print('Command executed!')
         cursor.close()
-        print('Database connection closed!')
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
     finally:
@@ -43,30 +45,30 @@ def home():
     return 'You have reached the API!'
 
 
-@app.route('/classification_svm', methods=['POST'])
+@app.route('/classification-svm', methods=['POST'])
 def post_classification_svm():
-    feature_values = [np.array(request.form['feature_values'])]
+    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
     prediction = classification_svm.predict(feature_values)
     return prediction
 
 
-@app.route('/classification_rf', methods=['POST'])
+@app.route('/classification-rf', methods=['POST'])
 def post_classification_rf():
-    feature_values = [np.array(request.form['feature_values'])]
+    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
     prediction = classification_rf.predict(feature_values)
     return prediction
 
 
-@app.route('/regression_en', methods=['POST'])
+@app.route('/regression-en', methods=['POST'])
 def post_regression_en():
-    feature_values = [np.array(request.form['feature_values'])]
+    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
     prediction = regression_en.predict(feature_values)
     return prediction
 
 
-@app.route('/regression_mlp', methods=['POST'])
+@app.route('/regression-mlp', methods=['POST'])
 def post_regression_mlp():
-    feature_values = [np.array(request.form['feature_values'])]
+    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
     prediction = regression_mlp.predict(feature_values)
     return prediction
 
@@ -76,19 +78,67 @@ def get_players():
     command = """
     SELECT row_to_json(players.*)
       FROM players
+     ORDER BY players.last_name
     """
-    players = select_data(command)
-    return players
+    players_raw = select_data(command)
+    players = []
+    for player in players_raw:
+        players.append({
+            'firstName': player['first_name'],
+            'lastName': player['last_name'],
+            'jerseyNumber': player['primary_number'],
+            'birthDate': player['birth_date'],
+            'nationality': player['nationality'],
+            'height': player['height'],
+            'weight': player['weight'],
+            'isAlternateCaptain': player['is_alternate_captain'],
+            'isCaptain': player['is_captain'],
+            'isRookie': player['is_rookie'],
+            'shootsCatches': player['shoots_catches'],
+            'primaryPosition': player['primary_position'],
+            'imageLink': player['image_link']
+        })
+    return json.dumps(players)
 
 
-@app.route('/season_stats', methods=['GET'])
+@app.route('/season-stats', methods=['GET'])
 def get_season_stats():
     command = """
     SELECT row_to_json(season_stats.*)
       FROM season_stats
+     ORDER BY season_stats.season_id
     """
-    season_stats = select_data(command)
-    return season_stats
+    season_stats_raw = select_data(command)
+    season_stats = []
+    for season in season_stats_raw:
+        season_stats.append({
+            'season': season['season_id'],
+            'gamesPlayed': season['games_played'],
+            'wins': season['wins'],
+            'losses': season['losses'],
+            'overtime': season['overtime'],
+            'points': season['points'],
+            'goalsPerGame': season['goals_per_game'],
+            'goalsAgainstPerGame': season['goals_against_per_game'],
+            'evGGARatio': season['ev_gga_ratio'],
+            'powerPlayPercentage': season['power_play_percentage'],
+            'powerPlayGoals': season['power_play_goals'],
+            'powerPlayGoalsAgainst': season['power_play_goals_against'],
+            'powerPlayOpportunities': season['power_play_opportunities'],
+            'penaltyKillPercentage': season['penalty_kill_percentage'],
+            'shotsPerGame': season['shots_per_game'],
+            'shotsAllowedPerGame': season['shots_allowed_per_game'],
+            'winScoreFirst': season['win_score_first'],
+            'winOppScoreFirst': season['win_opp_score_first'],
+            'winLeadFirstPer': season['win_lead_first_per'],
+            'winLeadSecondPer': season['win_lead_second_per'],
+            'winOutshootOpp': season['win_outshoot_opp'],
+            'winOutshotByOpp': season['win_outshot_by_opp'],
+            'faceoffsTaken': season['faceoffs_taken'],
+            'faceoffsLost': season['faceoffs_lost'],
+            'faceoffsWon': season['faceoffs_won'],
+        })
+    return json.dumps(season_stats)
 
 
 if __name__ == '__main__':
