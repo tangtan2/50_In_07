@@ -7,6 +7,7 @@ import PlayerSummary from "./PlayerSummary";
 import SeasonSummary from "./SeasonSummary";
 import Dropdown, { Option } from "react-dropdown";
 import "../Shared/Dropdown.css";
+import APIClient from "../API/APIClient";
 
 declare global {
   interface Window {
@@ -20,80 +21,75 @@ declare global {
 
 type Props = {};
 type State = {
+  selectedPlayer: string;
   playerStats: PlayerSummaryType;
+  selectedSeason: string;
   seasonStats: SeasonSummaryType;
 };
 
 export default class PageHome extends React.Component<Props, State> {
   state: State = {
+    selectedPlayer: "",
     playerStats: null,
+    selectedSeason: "",
     seasonStats: null,
   };
-  playerList: string[] = [];
-  seasonList: string[] = [];
+  playerNamesList: string[] = [];
+  playerDataList: PlayerSummaryType[] = [];
+  seasonNamesList: string[] = [];
+  seasonDataList: SeasonSummaryType[] = [];
 
   constructor(props: Props) {
     super(props);
     window.clearViz();
   }
 
-  componentDidMount() {
-    this.playerList = ["test", "test1"];
-    this.seasonList = ["2014-2015", "2015-2016"];
-    const playerData = {
-      firstName: "test",
-      lastName: "test",
-      jerseyNumber: 1,
-      birthDate: "1995-09-30",
-      nationality: "CAN",
-      height: "6-1",
-      weight: 300,
-      isAlternateCaptain: false,
-      isCaptain: true,
-      isRookie: false,
-      shootsCatches: "L",
-      primaryPosition: "Center",
-      imageLink:
-        "https://www.hockeydb.com/ihdb/stats/photo.php?if=joe-thornton-2021-38.jpg",
-    };
-    const seasonData = {
-      season: "2014-2015",
-      gamesPlayed: 1,
-      wins: 2,
-      losses: 3,
-      overtime: 1,
-      points: 2,
-      goalsPerGame: 3,
-      goalsAgainstPerGame: 1.05,
-      evGGARatio: 4.9,
-      powerPlayPercentage: 1,
-      powerPlayGoals: 2,
-      powerPlayGoalsAgainst: 3,
-      powerPlayOpportunities: 1,
-      penaltyKillPercentage: 4,
-      shotsPerGame: 5,
-      shotsAllowedPerGame: 1,
-      winScoreFirst: 4,
-      winOppScoreFirst: 2,
-      winLeadFirstPer: 8,
-      winLeadSecondPer: 4,
-      winOutshootOpp: 2,
-      winOutshotByOpp: 3,
-      faceoffsTaken: 4,
-      faceoffsLost: 6,
-      faceoffsWon: 6,
-    };
-    this.setState({ playerStats: playerData, seasonStats: seasonData });
+  async componentDidMount() {
+    await this.handleGetPlayerData();
+    await this.handleGetSeasonStatsData();
+    const playerData = this.playerDataList[0];
+    const seasonData = this.seasonDataList[0];
+    this.setState({
+      playerStats: playerData,
+      seasonStats: seasonData,
+      selectedPlayer: playerData?.firstName + " " + playerData?.lastName,
+      selectedSeason: seasonData?.season + "",
+    });
   }
 
-  async handleSelectPlayer(player: Option) {
-    const data = null;
-    this.setState({ playerStats: data });
+  async handleGetPlayerData() {
+    this.playerDataList = await APIClient.getPlayers();
+    this.playerNamesList = this.playerDataList.map(
+      (x) => x?.firstName + " " + x?.lastName
+    );
   }
 
-  async handleSelectSeason(season: Option) {
-    const data = null;
-    this.setState({ seasonStats: data });
+  async handleGetSeasonStatsData() {
+    this.seasonDataList = await APIClient.getSeasonStats();
+    this.seasonDataList.map((x) => {
+      if (x !== null) {
+        x.season =
+          String(x.season).substr(0, 4) + "-" + String(x.season).substr(4, 4);
+      }
+      return null;
+    });
+    this.seasonNamesList = this.seasonDataList.map((x) => x?.season + "");
+  }
+
+  handleSelectPlayer(player: Option) {
+    const data = this.playerDataList.find(
+      (x) => x?.firstName + " " + x?.lastName === player.value
+    );
+    if (data !== undefined) {
+      this.setState({ playerStats: data });
+    }
+  }
+
+  handleSelectSeason(season: Option) {
+    const data = this.seasonDataList.find((x) => x?.season === season.value);
+    if (data !== undefined) {
+      this.setState({ seasonStats: data });
+    }
   }
 
   render() {
@@ -164,7 +160,8 @@ export default class PageHome extends React.Component<Props, State> {
               }}
             >
               <Dropdown
-                options={this.playerList}
+                options={this.playerNamesList}
+                value={this.state.selectedPlayer}
                 onChange={(option) => {
                   this.handleSelectPlayer(option);
                 }}
@@ -184,7 +181,8 @@ export default class PageHome extends React.Component<Props, State> {
               }}
             >
               <Dropdown
-                options={this.seasonList}
+                options={this.seasonNamesList}
+                value={this.state.selectedSeason}
                 onChange={(option) => {
                   this.handleSelectSeason(option);
                 }}
@@ -196,6 +194,10 @@ export default class PageHome extends React.Component<Props, State> {
               </Card>
             </div>
           </div>
+          <Spacer type="row" size="xlarge" />
+          <Card title="Notes" titleAlign="left" titleSize={20}>
+            Explain statistics as footnotes
+          </Card>
         </div>
       </Page>
     );

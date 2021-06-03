@@ -21,6 +21,9 @@ const Menu = () => {
     >
       <div
         className="menu-item"
+        style={{
+          fontWeight: window.location.pathname === "/" ? "bolder" : "normal",
+        }}
         onClick={() => {
           history.push("/");
         }}
@@ -35,8 +38,16 @@ const Menu = () => {
       />
       <div
         className="menu-item"
+        style={{
+          fontWeight:
+            window.location.pathname === "/analysis/play-location"
+              ? "bolder"
+              : "normal",
+        }}
         onClick={() => {
-          history.push("/analysis/play-location");
+          if (window.location.pathname !== "/analysis/play-location") {
+            history.push("/analysis/play-location");
+          }
         }}
       >
         Play Location Analysis
@@ -49,8 +60,16 @@ const Menu = () => {
       />
       <div
         className="menu-item"
+        style={{
+          fontWeight:
+            window.location.pathname === "/analysis/player"
+              ? "bolder"
+              : "normal",
+        }}
         onClick={() => {
-          history.push("/analysis/player");
+          if (window.location.pathname !== "/analysis/player") {
+            history.push("/analysis/player");
+          }
         }}
       >
         Player Stats
@@ -63,8 +82,16 @@ const Menu = () => {
       />
       <div
         className="menu-item"
+        style={{
+          fontWeight:
+            window.location.pathname === "/analysis/goalie"
+              ? "bolder"
+              : "normal",
+        }}
         onClick={() => {
-          history.push("/analysis/goalie");
+          if (window.location.pathname !== "/analysis/goalie") {
+            history.push("/analysis/goalie");
+          }
         }}
       >
         Goalie Stats
@@ -77,8 +104,14 @@ const Menu = () => {
       />
       <div
         className="menu-item"
+        style={{
+          fontWeight:
+            window.location.pathname === "/analysis/team" ? "bolder" : "normal",
+        }}
         onClick={() => {
-          history.push("/analysis/team");
+          if (window.location.pathname !== "/analysis/team") {
+            history.push("/analysis/team");
+          }
         }}
       >
         Team Stats
@@ -93,6 +126,8 @@ const Menu = () => {
         className="menu-item"
         style={{
           fontStyle: "italics",
+          fontWeight:
+            window.location.pathname === "/predict" ? "bolder" : "normal",
         }}
         onClick={() => {
           history.push("/predict");
