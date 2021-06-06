@@ -1,13 +1,28 @@
 import React from "react";
+import PlusIcon from "../images/plus_icon.png";
+import MinusIcon from "../images/minus_icon.png";
+import "./Card.css";
 
 type Props = {
   title: string;
   titleAlign: "center" | "left" | "right";
   titleSize: number;
+  expandable: boolean;
+  initialIsExpanded: boolean;
 };
-type State = {};
+type State = {
+  isExpanded: boolean;
+};
 
 export default class Card extends React.Component<Props, State> {
+  state: State = {
+    isExpanded: this.props.initialIsExpanded,
+  };
+
+  handleExpandCard() {
+    this.setState({ isExpanded: !this.state.isExpanded });
+  }
+
   render() {
     return (
       <div
@@ -21,16 +36,49 @@ export default class Card extends React.Component<Props, State> {
         }}
       >
         <div
+          className="expandable-title"
           style={{
             fontSize: this.props.titleSize,
             marginBottom: "10px",
             textAlign: this.props.titleAlign,
             borderBottom: "1px solid lightgrey",
           }}
+          onClick={() => {
+            this.handleExpandCard();
+          }}
         >
+          {this.props.expandable ? (
+            this.state.isExpanded ? (
+              <img
+                style={{ marginRight: "10px" }}
+                width="20px"
+                height="20px"
+                src={MinusIcon}
+                alt="Minus Icon"
+              />
+            ) : (
+              <img
+                style={{ marginRight: "10px" }}
+                width="20px"
+                height="20px"
+                src={PlusIcon}
+                alt="Plus Icon"
+              />
+            )
+          ) : (
+            <div />
+          )}
           {this.props.title}
         </div>
-        {this.props.children}
+        {this.props.expandable ? (
+          this.state.isExpanded ? (
+            this.props.children
+          ) : (
+            <div />
+          )
+        ) : (
+          this.props.children
+        )}
       </div>
     );
   }

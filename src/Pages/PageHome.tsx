@@ -101,7 +101,13 @@ export default class PageHome extends React.Component<Props, State> {
             flexDirection: "column",
           }}
         >
-          <Card title="50 in '07" titleAlign="right" titleSize={25}>
+          <Card
+            initialIsExpanded={false}
+            expandable={false}
+            title="50 in '07"
+            titleAlign="right"
+            titleSize={25}
+          >
             <div>
               <div
                 style={{
@@ -168,7 +174,13 @@ export default class PageHome extends React.Component<Props, State> {
                 placeholder="Select a player"
               />
               <Spacer type="row" size="medium" />
-              <Card title="Player" titleAlign="left" titleSize={20}>
+              <Card
+                initialIsExpanded={false}
+                expandable={false}
+                title="Player"
+                titleAlign="left"
+                titleSize={20}
+              >
                 <PlayerSummary playerStats={this.state.playerStats} />
               </Card>
             </div>
@@ -189,13 +201,25 @@ export default class PageHome extends React.Component<Props, State> {
                 placeholder="Select a season"
               />
               <Spacer type="row" size="medium" />
-              <Card title="Season" titleAlign="left" titleSize={20}>
+              <Card
+                initialIsExpanded={false}
+                expandable={false}
+                title="Season"
+                titleAlign="left"
+                titleSize={20}
+              >
                 <SeasonSummary seasonStats={this.state.seasonStats} />
               </Card>
             </div>
           </div>
           <Spacer type="row" size="xlarge" />
-          <Card title="Notes" titleAlign="left" titleSize={20}>
+          <Card
+            initialIsExpanded={false}
+            expandable={false}
+            title="Notes"
+            titleAlign="left"
+            titleSize={20}
+          >
             Explain statistics as footnotes
           </Card>
         </div>

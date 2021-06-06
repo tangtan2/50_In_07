@@ -44,14 +44,9 @@ export type SeasonSummaryType = {
 
 export type PostClassificationType = {
   fullName: string;
-  primaryPosition:
-    | "Center"
-    | "Defenseman"
-    | "Goalie"
-    | "Left Wing"
-    | "Right Wing";
+  primaryPosition: string;
   opposingTeam: string;
-  periodType: "OVERTIME" | "REGULAR" | "SHOOTOUT";
+  periodType: string;
   xCoordinate: number;
   yCoordinate: number;
   goalRatio: number;
@@ -60,24 +55,11 @@ export type PostClassificationType = {
 export type ClassificationPrediction = {};
 
 export type PostRegressionType = {
-  gameType: "P" | "PR" | "R";
+  gameType: string;
   opposingTeam: string;
-  homeOrAway: "Home" | "Away";
+  homeOrAway: string;
   fullName: string;
-  primaryPosition:
-    | "Center"
-    | "Defenseman"
-    | "Goalie"
-    | "Left Wing"
-    | "Right Wing";
-  timeOnIce: number;
-  assists: number;
-  shots: number;
-  hits: number;
-  penaltyMinuts: number;
-  takeaways: number;
-  giveaways: number;
-  plusMinus: number;
+  primaryPosition: string;
 };
 
 export type RegressionPrediction = {};
