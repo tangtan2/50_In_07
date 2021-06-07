@@ -177,7 +177,7 @@ export default class PageHome extends React.Component<Props, State> {
               <Card
                 initialIsExpanded={false}
                 expandable={false}
-                title="Player"
+                title="Player Profile"
                 titleAlign="left"
                 titleSize={20}
               >
@@ -204,7 +204,7 @@ export default class PageHome extends React.Component<Props, State> {
               <Card
                 initialIsExpanded={false}
                 expandable={false}
-                title="Season"
+                title="Team Statistics per Season"
                 titleAlign="left"
                 titleSize={20}
               >

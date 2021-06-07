@@ -47,30 +47,77 @@ def home():
 
 @app.route('/classification-svm', methods=['POST'])
 def post_classification_svm():
-    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
-    prediction = classification_svm.predict(feature_values)
-    return prediction
+    feature_values = pd.json_normalize([json.loads(request.data)])
+    prediction = classification_svm.predict(feature_values).tolist()
+    if prediction[0] == 0:
+        prediction = 'Scorer'
+    else:
+        prediction = 'Shooter'
+    return {'playerType': prediction}
 
 
 @app.route('/classification-rf', methods=['POST'])
 def post_classification_rf():
-    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
-    prediction = classification_rf.predict(feature_values)
-    return prediction
+    feature_values = pd.json_normalize([json.loads(request.data)])
+    prediction = classification_rf.predict(feature_values).tolist()
+    if prediction[0] == 0:
+        prediction = 'Scorer'
+    else:
+        prediction = 'Shooter'
+    return {'playerType': prediction}
 
 
 @app.route('/regression-en', methods=['POST'])
 def post_regression_en():
-    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
-    prediction = regression_en.predict(feature_values)
-    return prediction
+    feature_values = pd.json_normalize([json.loads(request.data)])
+    prediction = regression_en.predict(feature_values).tolist()
+    return {'goals': prediction[0]}
 
 
 @app.route('/regression-mlp', methods=['POST'])
 def post_regression_mlp():
-    feature_values = pd.json_normalize([json.loads(request.form['feature_values'])])
-    prediction = regression_mlp.predict(feature_values)
-    return prediction
+    feature_values = pd.json_normalize([json.loads(request.data)])
+    prediction = regression_mlp.predict(feature_values).tolist()
+    return {'goals': prediction[0]}
+
+
+@app.route('/game-types', methods=['GET'])
+def get_game_types():
+    command = """
+    SELECT row_to_json(game_types.*)
+      FROM game_types
+    """
+    game_types_raw = select_data(command)
+    game_types = []
+    for game_type in game_types_raw:
+        game_types.append(game_type['description'])
+    return json.dumps(game_types)
+
+
+@app.route('/period-types', methods=['GET'])
+def get_period_types():
+    command = """
+    SELECT row_to_json(period_types.*)
+      FROM period_types
+    """
+    period_types_raw = select_data(command)
+    period_types = []
+    for period_type in period_types_raw:
+        period_types.append(period_type['description'])
+    return json.dumps(period_types)
+
+
+@app.route('/team-names', methods=['GET'])
+def get_team_names():
+    command = """
+    SELECT row_to_json(teams.*)
+      FROM teams
+    """
+    teams_raw = select_data(command)
+    team_names = []
+    for team in teams_raw:
+        team_names.append(team['name'])
+    return json.dumps(team_names)
 
 
 @app.route('/players', methods=['GET'])

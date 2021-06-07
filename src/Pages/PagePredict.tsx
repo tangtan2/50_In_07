@@ -33,6 +33,7 @@ export default class PagePredict extends React.Component {
         >
           <FormRegression />
         </Card>
+        <Spacer type="row" size="xlarge" />
       </Page>
     );
   }

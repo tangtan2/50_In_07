@@ -1,5 +1,6 @@
 .Dropdown-root {
   position: relative;
+  flex: 1;
 }
 
 .Dropdown-control {

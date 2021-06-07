@@ -43,23 +43,31 @@ export type SeasonSummaryType = {
 } | null;
 
 export type PostClassificationType = {
-  fullName: string;
-  primaryPosition: string;
-  opposingTeam: string;
-  periodType: string;
-  xCoordinate: number;
-  yCoordinate: number;
-  goalRatio: number;
+  full_name: string;
+  height: number;
+  weight: number;
+  primary_position: string;
+  opposing_team: string;
+  period_type: string;
+  x_coordinate: number;
+  y_coordinate: number;
+  goal_ratio: number;
 };
 
-export type ClassificationPrediction = {};
+export type ClassificationPrediction = {
+  playerType: "Scorer" | "Shooter";
+};
 
 export type PostRegressionType = {
-  gameType: string;
-  opposingTeam: string;
-  homeOrAway: string;
-  fullName: string;
-  primaryPosition: string;
+  game_type: string;
+  height: number;
+  weight: number;
+  opposing_team: string;
+  home_or_away: string;
+  full_name: string;
+  primary_position: string;
 };
 
-export type RegressionPrediction = {};
+export type RegressionPrediction = {
+  goals: number;
+};
