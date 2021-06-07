@@ -50,6 +50,22 @@ export default class API {
     return this._getEndpoint("/season-stats");
   };
 
+  public getTeamNames = (): Promise<string[]> => {
+    return this._getEndpoint("/team-names");
+  };
+
+  public getGameTypes = (): Promise<string[]> => {
+    return this._getEndpoint("/game-types");
+  };
+
+  public getPlayerPositionTypes = (): Promise<string[]> => {
+    return this._getEndpoint("/player-position-types");
+  };
+
+  public getPeriodTypes = (): Promise<string[]> => {
+    return this._getEndpoint("/period-types");
+  };
+
   public postClassificationSVM = (
     data: PostClassificationType
   ): Promise<ClassificationPrediction> => {
