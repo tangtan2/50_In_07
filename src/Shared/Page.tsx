@@ -14,6 +14,7 @@ const Page = ({ children }: any) => {
           fontFamily: "Nunito Sans",
           marginLeft: "10px",
           marginRight: "10px",
+          color: "#212F3C",
         }}
       >
         {children}

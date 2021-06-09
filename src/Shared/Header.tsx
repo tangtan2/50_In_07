@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
-import menu_icon from "../images/menu_icon.png";
+import MenuIcon from "../images/menu_icon.png";
+import Logo from "../images/logo.png";
 
 type Props = {};
 type State = {
@@ -21,7 +22,7 @@ export default class Header extends React.Component<Props, State> {
       <div
         style={{
           fontFamily: "Nunito Sans",
-          height: "30px",
+          height: "85px",
           position: "relative",
         }}
       >
@@ -40,6 +41,7 @@ export default class Header extends React.Component<Props, State> {
               alignItems: "center",
             }}
           >
+            <img src={Logo} alt="Logo" height="80px" />
             <div style={{ flex: 1 }} />
             <div
               style={{
@@ -60,7 +62,7 @@ export default class Header extends React.Component<Props, State> {
                   height: "30px",
                 }}
                 type="image"
-                src={menu_icon}
+                src={MenuIcon}
                 alt="Menu Icon"
                 onClick={() => {
                   this.onMenuToggle();

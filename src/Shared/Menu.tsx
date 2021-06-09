@@ -11,12 +11,13 @@ const Menu = () => {
         marginTop: "5px",
         marginRight: "5px",
         border: "1px solid lightgrey",
-        backgroundColor: "#d5d8dc",
+        backgroundColor: "white",
         borderRadius: "5px",
         padding: "10px",
         boxShadow: "1px 1px 3px 0.5px lightgrey",
         right: 0,
         position: "absolute",
+        color: "#212F3C",
       }}
     >
       <div
@@ -33,7 +34,7 @@ const Menu = () => {
       <div
         style={{
           width: "100%",
-          borderBottom: "1px solid white",
+          borderBottom: "1px solid lightgrey",
         }}
       />
       <div
@@ -55,7 +56,7 @@ const Menu = () => {
       <div
         style={{
           width: "100%",
-          borderBottom: "1px solid white",
+          borderBottom: "1px solid lightgrey",
         }}
       />
       <div
@@ -72,12 +73,12 @@ const Menu = () => {
           }
         }}
       >
-        Player Stats
+        Player Analysis
       </div>
       <div
         style={{
           width: "100%",
-          borderBottom: "1px solid white",
+          borderBottom: "1px solid lightgrey",
         }}
       />
       <div
@@ -94,12 +95,12 @@ const Menu = () => {
           }
         }}
       >
-        Goalie Stats
+        Goalie Analysis
       </div>
       <div
         style={{
           width: "100%",
-          borderBottom: "1px solid white",
+          borderBottom: "1px solid lightgrey",
         }}
       />
       <div
@@ -114,12 +115,12 @@ const Menu = () => {
           }
         }}
       >
-        Team Stats
+        Team Analysis
       </div>
       <div
         style={{
           width: "100%",
-          borderBottom: "1px solid white",
+          borderBottom: "1px solid lightgrey",
         }}
       />
       <div

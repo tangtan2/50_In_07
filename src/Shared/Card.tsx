@@ -29,9 +29,9 @@ export default class Card extends React.Component<Props, State> {
         style={{
           border: "2px solid #1b4f72",
           borderRadius: "5px",
-          padding: "10px",
+          padding: "20px",
           backgroundColor: "white",
-          boxShadow: "2px 2px 1px 0.5px #1b4f72",
+          boxShadow: "2px 2px 1px 0.5px #496588",
           flex: 1,
         }}
       >
