@@ -14,10 +14,13 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
+    "all": "npm run build && npm run deploy && npm run invalidate",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync --acl public-read --profile tanya --delete build/ s3://tanya-50-in-07",
+    "invalidate": "aws cloudfront --profile tanya create-invalidation --distribution-id EZV50HCYKANV --paths \"/*\""
   },
   "eslintConfig": {
     "extends": [
