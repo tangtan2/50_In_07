@@ -25,6 +25,7 @@ type State = {
   playerStats: PlayerSummaryType;
   selectedSeason: string;
   seasonStats: SeasonSummaryType;
+  windowWidth: number;
 };
 
 export default class PageHome extends React.Component<Props, State> {
@@ -33,6 +34,7 @@ export default class PageHome extends React.Component<Props, State> {
     playerStats: null,
     selectedSeason: "",
     seasonStats: null,
+    windowWidth: 0,
   };
   playerNamesList: string[] = [];
   playerDataList: PlayerSummaryType[] = [];
@@ -44,7 +46,12 @@ export default class PageHome extends React.Component<Props, State> {
     window.clearViz();
   }
 
+  updateWindowWidth = () => {
+    this.setState({ windowWidth: window.innerWidth });
+  };
+
   async componentDidMount() {
+    window.addEventListener("resize", this.updateWindowWidth);
     await this.handleGetPlayerData();
     await this.handleGetSeasonStatsData();
     const playerData = this.playerDataList[0];
@@ -54,6 +61,7 @@ export default class PageHome extends React.Component<Props, State> {
       seasonStats: seasonData,
       selectedPlayer: playerData?.firstName + " " + playerData?.lastName,
       selectedSeason: seasonData?.season + "",
+      windowWidth: window.innerWidth,
     });
   }
 
@@ -154,7 +162,7 @@ export default class PageHome extends React.Component<Props, State> {
           <div
             style={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: this.state.windowWidth > 1350 ? "row" : "column",
               justifyContent: "center",
             }}
           >
@@ -184,7 +192,10 @@ export default class PageHome extends React.Component<Props, State> {
                 <PlayerSummary playerStats={this.state.playerStats} />
               </Card>
             </div>
-            <Spacer type="column" size="xlarge" />
+            <Spacer
+              type={this.state.windowWidth > 1000 ? "column" : "row"}
+              size="xlarge"
+            />
             <div
               style={{
                 display: "flex",
@@ -222,6 +233,7 @@ export default class PageHome extends React.Component<Props, State> {
           >
             Explain statistics as footnotes
           </Card>
+          <Spacer type="row" size="xlarge" />
         </div>
       </Page>
     );

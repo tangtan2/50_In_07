@@ -51,6 +51,7 @@ export default class PagePlayLocationAnalysis extends React.Component {
             }}
           />
         </div>
+        <Spacer type="row" size="xlarge" />
       </Page>
     );
   }

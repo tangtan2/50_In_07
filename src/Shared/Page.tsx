@@ -12,8 +12,9 @@ const Page = ({ children }: any) => {
         style={{
           marginTop: "45px",
           fontFamily: "Nunito Sans",
-          marginLeft: "10px",
-          marginRight: "10px",
+          marginLeft: "40px",
+          marginRight: "40px",
+          marginBottom: "20px",
           color: "#212F3C",
         }}
       >

@@ -15,6 +15,7 @@ type State = {
   selectedWeight: number;
   selectedRegressionMethod: string;
   predictionResults: string;
+  windowWidth: number;
 };
 
 export default class FormRegression extends React.Component<Props, State> {
@@ -28,6 +29,7 @@ export default class FormRegression extends React.Component<Props, State> {
     selectedPrimaryPosition: "",
     selectedRegressionMethod: "",
     predictionResults: "",
+    windowWidth: 0,
   };
   playerNames: string[] = [];
   gameTypes: string[] = [];
@@ -38,7 +40,12 @@ export default class FormRegression extends React.Component<Props, State> {
   weights: { [playerName: string]: number } = {};
   regressionMethod = ["Elastic-Net", "Multi-Layer Perceptron"];
 
+  updateWindowWidth = () => {
+    this.setState({ windowWidth: window.innerWidth });
+  };
+
   async componentDidMount() {
+    window.addEventListener("resize", this.updateWindowWidth);
     await this.handleGetPlayers();
     await this.handleGetGameTypes();
     await this.handleGetOpposingTeams();
@@ -51,6 +58,7 @@ export default class FormRegression extends React.Component<Props, State> {
       selectedHeight: this.heights[this.playerNames[0]],
       selectedWeight: this.weights[this.playerNames[0]],
       selectedRegressionMethod: this.regressionMethod[0],
+      windowWidth: window.innerWidth,
     });
   }
 
@@ -157,7 +165,13 @@ export default class FormRegression extends React.Component<Props, State> {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ padding: "20px" }}>DESCRIPTION PLACEHOLDER</div>
-        <div style={{ display: "flex", flexDirection: "row", padding: "20px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: this.state.windowWidth > 1200 ? "row" : "column",
+            padding: "20px",
+          }}
+        >
           <div
             style={{
               display: "flex",
@@ -257,6 +271,11 @@ export default class FormRegression extends React.Component<Props, State> {
               />
             </div>
           </div>
+          {this.state.windowWidth > 1200 ? (
+            <div />
+          ) : (
+            <Spacer type="row" size="large" />
+          )}
           <div
             style={{
               display: "flex",
@@ -284,6 +303,11 @@ export default class FormRegression extends React.Component<Props, State> {
               Make a Prediction...
             </button>
           </div>
+          {this.state.windowWidth > 1200 ? (
+            <div />
+          ) : (
+            <Spacer type="row" size="large" />
+          )}
           <div
             style={{
               display: "flex",

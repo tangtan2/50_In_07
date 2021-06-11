@@ -48,6 +48,7 @@ export default class PagePlayerAnalysis extends React.Component {
             }}
           />
         </div>
+        <Spacer type="row" size="xlarge" />
       </Page>
     );
   }

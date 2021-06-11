@@ -48,6 +48,7 @@ export default class PageGoalieAnalysis extends React.Component {
             }}
           />
         </div>
+        <Spacer type="row" size="xlarge" />
       </Page>
     );
   }

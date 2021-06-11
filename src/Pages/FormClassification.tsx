@@ -21,6 +21,7 @@ type State = {
   inputtedOpponentGoals: number;
   selectedClassificationMethod: string;
   predictionResults: string;
+  windowWidth: number;
 };
 
 export default class FormClassification extends React.Component<Props, State> {
@@ -39,6 +40,7 @@ export default class FormClassification extends React.Component<Props, State> {
     inputtedOpponentGoals: 0,
     selectedClassificationMethod: "",
     predictionResults: "",
+    windowWidth: 0,
   };
   playerNames: string[] = [];
   primaryPositions: { [playerName: string]: string } = {};
@@ -50,7 +52,12 @@ export default class FormClassification extends React.Component<Props, State> {
   xCoordinateLimit = 100;
   yCoordinateLimit = 43;
 
+  updateWindowWidth = () => {
+    this.setState({ windowWidth: window.innerWidth });
+  };
+
   async componentDidMount() {
+    window.addEventListener("resize", this.updateWindowWidth);
     await this.handleGetPlayers();
     await this.handleGetOpposingTeams();
     await this.handleGetPeriodTypes();
@@ -62,6 +69,7 @@ export default class FormClassification extends React.Component<Props, State> {
       selectedOpposingTeam: this.opposingTeams[0],
       selectedPrimaryPosition: this.primaryPositions[this.playerNames[0]],
       selectedClassificationMethod: this.classificationMethods[0],
+      windowWidth: window.innerWidth,
     });
   }
 
@@ -202,14 +210,16 @@ export default class FormClassification extends React.Component<Props, State> {
   }
 
   async handlePostClassificationSVMPrediction(data: PostClassificationType) {
-    const prediction: ClassificationPrediction =
-      await APIClient.postClassificationSVM(data);
+    const prediction: ClassificationPrediction = await APIClient.postClassificationSVM(
+      data
+    );
     return prediction;
   }
 
   async handlePostClassificationRFPrediction(data: PostClassificationType) {
-    const prediction: ClassificationPrediction =
-      await APIClient.postClassificationRF(data);
+    const prediction: ClassificationPrediction = await APIClient.postClassificationRF(
+      data
+    );
     return prediction;
   }
 
@@ -217,7 +227,13 @@ export default class FormClassification extends React.Component<Props, State> {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div style={{ padding: "20px" }}>DESCRIPTION PLACEHOLDER</div>
-        <div style={{ display: "flex", flexDirection: "row", padding: "20px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: this.state.windowWidth > 1200 ? "row" : "column",
+            padding: "20px",
+          }}
+        >
           <div
             style={{
               display: "flex",
@@ -411,6 +427,11 @@ export default class FormClassification extends React.Component<Props, State> {
               />
             </div>
           </div>
+          {this.state.windowWidth > 1200 ? (
+            <div />
+          ) : (
+            <Spacer type="row" size="large" />
+          )}
           <div
             style={{
               display: "flex",
@@ -438,6 +459,11 @@ export default class FormClassification extends React.Component<Props, State> {
               Make a Prediction...
             </button>
           </div>
+          {this.state.windowWidth > 1200 ? (
+            <div />
+          ) : (
+            <Spacer type="row" size="large" />
+          )}
           <div
             style={{
               display: "flex",

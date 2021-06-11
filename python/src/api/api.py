@@ -47,6 +47,7 @@ def home():
 
 @app.route('/classification-svm', methods=['POST'])
 def post_classification_svm():
+    classification_svm = pickle.load(open('models/classification_pipeline_svm.pkl', 'rb'))
     feature_values = pd.json_normalize([json.loads(request.data)])
     prediction = classification_svm.predict(feature_values).tolist()
     if prediction[0] == 0:
@@ -58,6 +59,7 @@ def post_classification_svm():
 
 @app.route('/classification-rf', methods=['POST'])
 def post_classification_rf():
+    classification_rf = pickle.load(open('models/classification_pipeline_rf.pkl', 'rb'))
     feature_values = pd.json_normalize([json.loads(request.data)])
     prediction = classification_rf.predict(feature_values).tolist()
     if prediction[0] == 0:
@@ -69,6 +71,7 @@ def post_classification_rf():
 
 @app.route('/regression-en', methods=['POST'])
 def post_regression_en():
+    regression_en = pickle.load(open('models/regression_pipeline_en.pkl', 'rb'))
     feature_values = pd.json_normalize([json.loads(request.data)])
     prediction = regression_en.predict(feature_values).tolist()
     return {'goals': prediction[0]}
@@ -76,6 +79,7 @@ def post_regression_en():
 
 @app.route('/regression-mlp', methods=['POST'])
 def post_regression_mlp():
+    regression_mlp = pickle.load(open('models/regression_pipeline_mlp.pkl', 'rb'))
     feature_values = pd.json_normalize([json.loads(request.data)])
     prediction = regression_mlp.predict(feature_values).tolist()
     return {'goals': prediction[0]}
@@ -189,8 +193,4 @@ def get_season_stats():
 
 
 if __name__ == '__main__':
-    classification_svm = pickle.load(open('models/classification_pipeline_svm.pkl', 'rb'))
-    classification_rf = pickle.load(open('models/classification_pipeline_rf.pkl', 'rb'))
-    regression_en = pickle.load(open('models/regression_pipeline_en.pkl', 'rb'))
-    regression_mlp = pickle.load(open('models/regression_pipeline_mlp.pkl', 'rb'))
     app.run(debug=True)
