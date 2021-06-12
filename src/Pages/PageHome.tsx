@@ -126,6 +126,7 @@ export default class PageHome extends React.Component<Props, State> {
               >
                 <img
                   alt="Maple Leafs Logo"
+                  height="100px"
                   src="//upload.wikimedia.org/wikipedia/en/thumb/e/e7/Toronto_Maple_Leafs_Logo_1939_-_1967.svg/184px-Toronto_Maple_Leafs_Logo_1939_-_1967.svg.png"
                 />
               </div>
@@ -134,26 +135,28 @@ export default class PageHome extends React.Component<Props, State> {
                   whiteSpace: "pre-wrap",
                   overflowWrap: "break-word",
                   padding: "10px",
-                  fontSize: "14pt",
+                  fontWeight: 300,
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                efficitur nunc porta malesuada luctus. Nullam tristique bibendum
-                ipsum sit amet volutpat. Donec fermentum risus sed nisl dictum
-                vulputate. Nullam non ex turpis. Nullam condimentum odio ut
-                tincidunt eleifend. Morbi congue leo enim, non congue massa
-                tristique et. Integer ut magna a enim molestie congue eu eget
-                leo. Maecenas gravida nunc sed ligula pretium consequat.
-                Phasellus lobortis tincidunt arcu, quis maximus nisi accumsan
-                vitae. Suspendisse at congue lorem, a hendrerit ante. Integer
-                leo tortor, dictum vel orci viverra, porta dictum libero.
-                Vestibulum quis metus lorem. Donec rutrum elementum facilisis.
-                Fusce diam sapien, euismod non purus pharetra, mollis ornare
-                lacus. Vestibulum auctor, turpis varius semper porttitor, massa
-                mauris aliquam dolor, eget maximus quam odio eget nunc. Nulla
-                efficitur dolor eu nisi sollicitudin congue. Praesent congue
-                varius leo non euismod. Donec sed bibendum mauris. Praesent
-                suscipit non purus nec gravida.
+                Much like disgraced NHL left winger Dany Heatley's
+                record-setting 50 goals for the Ottawa Senators in the 2006-2007
+                season, the Maple Leafs can be considered an above average team
+                from a certain angle, having top talent like Auston Matthews,
+                John Tavares, and Mitch Marner. But also like Dany Heatley, the
+                Maple Leafs have never really lived up to their potential since
+                the late 1960's when they won their last Stanley Cup. Boasting a
+                young, fast, and agile team of skilled offensive players, but
+                lacking a consistent defense and goalie, it's no wonder the
+                Leafs have been able to dramatically win games by a huge margin
+                but also lose to better teams in the playoffs every year. If
+                you're interested in learning more about this enigma of a hockey
+                team, use the menu on the top right to navigate between{" "}
+                <b style={{ fontWeight: "bold" }}>
+                  different visualizations of game, team, and player data, as
+                  well as a <a href="/predict">prediction demo</a> where you can
+                  simulate the results of different shots or predict the number
+                  of goals a player might score.
+                </b>
               </div>
             </div>
           </Card>
@@ -161,8 +164,10 @@ export default class PageHome extends React.Component<Props, State> {
           <div
             style={{
               display: "flex",
-              flexDirection: this.state.windowWidth > 1350 ? "row" : "column",
+              flexDirection: this.state.windowWidth > 1250 ? "row" : "column",
               justifyContent: "center",
+              fontWeight: 300,
+              fontSize: "11pt",
             }}
           >
             <div
@@ -192,7 +197,7 @@ export default class PageHome extends React.Component<Props, State> {
               </Card>
             </div>
             <Spacer
-              type={this.state.windowWidth > 1350 ? "column" : "row"}
+              type={this.state.windowWidth > 1250 ? "column" : "row"}
               size="xlarge"
             />
             <div
@@ -230,7 +235,7 @@ export default class PageHome extends React.Component<Props, State> {
             titleAlign="left"
             titleSize={20}
           >
-            <div>
+            <div style={{ fontWeight: 300, fontSize: "10pt" }}>
               <sup style={{ fontSize: "7pt" }}>(1)</sup> The EV-GGA ratio refers
               to the ratio between even strength goals and even strength goals
               against, where even strength means both teams have an equal number
@@ -241,7 +246,7 @@ export default class PageHome extends React.Component<Props, State> {
               to gauge the overall performance of a team for a given season.
             </div>
             <Spacer type="row" size="large" />
-            <div>
+            <div style={{ fontWeight: 300, fontSize: "10pt" }}>
               <sup style={{ fontSize: "7pt" }}>(2)</sup> A power play happens
               when a team takes a penalty, causing one of their players to leave
               the ice for a certain amount of time and creating an advantage for
@@ -255,7 +260,7 @@ export default class PageHome extends React.Component<Props, State> {
               over 4 opportunities).
             </div>
             <Spacer type="row" size="large" />
-            <div>
+            <div style={{ fontWeight: 300, fontSize: "10pt" }}>
               <sup style={{ fontSize: "7pt" }}>(3)</sup> The penalty kill
               percentage acts as the complementary metric to the power play
               percentage, measuring the rate at which a team prevents their
@@ -266,7 +271,7 @@ export default class PageHome extends React.Component<Props, State> {
               defensive strength of a team.
             </div>
             <Spacer type="row" size="large" />
-            <div>
+            <div style={{ fontWeight: 300, fontSize: "10pt" }}>
               <sup style={{ fontSize: "7pt" }}>(4)</sup> These metrics show the
               percentage of games won where the indicated event occurred. There
               are 6 distinct events: games where the Leafs scored first and won,
