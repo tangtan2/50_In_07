@@ -37,7 +37,6 @@ const PlayerSummary = (props: Props) => {
               padding: "10px",
               display: "flex",
               flexDirection: "column",
-              fontWeight: "lighter",
             }}
           >
             <div

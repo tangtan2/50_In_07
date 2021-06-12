@@ -164,7 +164,34 @@ export default class FormRegression extends React.Component<Props, State> {
   render() {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ padding: "20px" }}>DESCRIPTION PLACEHOLDER</div>
+        <div
+          style={{
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            paddingTop: "20px",
+          }}
+        >
+          Here you can make a prediction about how many goals a player would
+          score against their opponent in a certain game. Use the following form
+          to fill out your simulated game state. Pick the player, game type,
+          home or away status, opposing team, and regression method from the
+          dropdown lists, then make your prediction!
+        </div>
+        <Spacer type="row" size="large" />
+        <div
+          style={{
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            paddingBottom: "20px",
+          }}
+        >
+          To see how these models were created, from the data collection process
+          all the way to model validation and analysis, click{" "}
+          <a href="https://github.com/tangtan2/50_in_07/blob/master/python/src/notebooks/player_goals_regression.ipynb">
+            here
+          </a>{" "}
+          to view the jupyter notebook!
+        </div>
         <div
           style={{
             display: "flex",
@@ -179,7 +206,14 @@ export default class FormRegression extends React.Component<Props, State> {
               width: "450px",
             }}
           >
-            <div>Select your prediction parameters!</div>
+            <div
+              style={{
+                fontWeight: "bold",
+                borderBottom: "1px solid lightgrey",
+              }}
+            >
+              Select your prediction parameters!
+            </div>
             <Spacer type="row" size="large" />
             <div
               style={{

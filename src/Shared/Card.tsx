@@ -33,6 +33,7 @@ export default class Card extends React.Component<Props, State> {
           backgroundColor: "white",
           boxShadow: "2px 2px 1px 0.5px #496588",
           flex: 1,
+          whiteSpace: "normal",
         }}
       >
         <div

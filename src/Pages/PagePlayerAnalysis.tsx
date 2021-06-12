@@ -31,7 +31,13 @@ export default class PagePlayerAnalysis extends React.Component {
             expandable={false}
             initialIsExpanded={true}
           >
-            test
+            Here we can see a summary of player statistics and characteristics.
+            The top chart shows the age, height, weight, and lifetime goals of
+            the Leafs' current roster, grouped by player position. The bottom
+            middle chart shows the average number of goals and assists per game
+            for the selected player. The bottom right chart shows the average
+            time a player spends on the ice. Both bottom charts are separated
+            into preseason, regular, and playoff game categories.
           </Card>
           <Spacer size="xlarge" type="row" />
           <div

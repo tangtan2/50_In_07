@@ -135,7 +135,6 @@ export default class PageHome extends React.Component<Props, State> {
                   overflowWrap: "break-word",
                   padding: "10px",
                   fontSize: "14pt",
-                  fontWeight: "lighter",
                 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
@@ -162,7 +161,7 @@ export default class PageHome extends React.Component<Props, State> {
           <div
             style={{
               display: "flex",
-              flexDirection: this.state.windowWidth > 1300 ? "row" : "column",
+              flexDirection: this.state.windowWidth > 1350 ? "row" : "column",
               justifyContent: "center",
             }}
           >
@@ -170,7 +169,7 @@ export default class PageHome extends React.Component<Props, State> {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                flex: 0.8,
+                flex: 0.7,
               }}
             >
               <Dropdown
@@ -193,7 +192,7 @@ export default class PageHome extends React.Component<Props, State> {
               </Card>
             </div>
             <Spacer
-              type={this.state.windowWidth > 1300 ? "column" : "row"}
+              type={this.state.windowWidth > 1350 ? "column" : "row"}
               size="xlarge"
             />
             <div
@@ -231,7 +230,52 @@ export default class PageHome extends React.Component<Props, State> {
             titleAlign="left"
             titleSize={20}
           >
-            Explain statistics as footnotes
+            <div>
+              <sup style={{ fontSize: "7pt" }}>(1)</sup> The EV-GGA ratio refers
+              to the ratio between even strength goals and even strength goals
+              against, where even strength means both teams have an equal number
+              of players on the ice. Thus, an EV-GGA ratio over 1 means you have
+              scored more goals throughout the season than were scored on you.
+              Obviously, this metric does not account for the distribution of
+              these goals across games or opponents, but it can be a quick way
+              to gauge the overall performance of a team for a given season.
+            </div>
+            <Spacer type="row" size="large" />
+            <div>
+              <sup style={{ fontSize: "7pt" }}>(2)</sup> A power play happens
+              when a team takes a penalty, causing one of their players to leave
+              the ice for a certain amount of time and creating an advantage for
+              the other team who now has more players on the ice. This metric
+              shows the success rate of power plays, calculated by dividing the
+              number of power play goals scored over the number of power play
+              opportunities, and can be used to evaluate the offensive strength
+              of a team. Note that every time a power play goal is scored, a new
+              power play opportunity starts. So, if a team scores 3 goals during
+              a 5 minute major, the power play percentage would be 75% (3 goals
+              over 4 opportunities).
+            </div>
+            <Spacer type="row" size="large" />
+            <div>
+              <sup style={{ fontSize: "7pt" }}>(3)</sup> The penalty kill
+              percentage acts as the complementary metric to the power play
+              percentage, measuring the rate at which a team prevents their
+              opponent from scoring when the opponent is on a power play. This
+              metric is calculated by subtracting power play goals against from
+              power play opportunities against, then dividing that by the power
+              play opportunities against, and can be used to evaluate the
+              defensive strength of a team.
+            </div>
+            <Spacer type="row" size="large" />
+            <div>
+              <sup style={{ fontSize: "7pt" }}>(4)</sup> These metrics show the
+              percentage of games won where the indicated event occurred. There
+              are 6 distinct events: games where the Leafs scored first and won,
+              games where the opponent scored first but the Leafs won, games
+              where the Leafs took a first period lead and won, games where the
+              Leafs took a second period lead and won, games where the Leafs
+              outshot their opponent and won, and games where the Leafs were
+              outshot by their opponent and still won.
+            </div>
           </Card>
           <Spacer type="row" size="xlarge" />
         </div>

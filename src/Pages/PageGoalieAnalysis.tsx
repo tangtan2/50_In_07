@@ -31,7 +31,10 @@ export default class PageGoalieAnalysis extends React.Component {
             expandable={false}
             initialIsExpanded={true}
           >
-            test
+            Frederik Andersen has been the starting goalie for the Maple Leafs
+            since he joined in 2016. This visualization shows some of his stats
+            against other teams in the NHL as well as his save percentage
+            throughout his career with the Maple Leafs.
           </Card>
           <Spacer size="xlarge" type="row" />
           <div

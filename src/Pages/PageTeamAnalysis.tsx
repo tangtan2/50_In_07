@@ -31,7 +31,10 @@ export default class PageTeamAnalysis extends React.Component {
             expandable={false}
             initialIsExpanded={true}
           >
-            test
+            This visualization shows some team stats for the Maple Leafs over
+            the years, starting from the 2015-2016 season. The top chart shows
+            the average goals scored per game, broken down into even strength,
+            power play, and short handed goals.
           </Card>
           <Spacer size="xlarge" type="row" />
           <div

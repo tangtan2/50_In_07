@@ -224,7 +224,37 @@ export default class FormClassification extends React.Component<Props, State> {
   render() {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ padding: "20px" }}>DESCRIPTION PLACEHOLDER</div>
+        <div
+          style={{
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            paddingTop: "20px",
+          }}
+        >
+          Here you can make a prediction about whether or not a certain player
+          will score goal if they take a shot with your selected parameters. Use
+          the following form to fill out your simulated game state. Pick the
+          player, period type, opposing team, and classification method from the
+          dropdown lists. Then, type in the current number of goals scored by
+          the Leafs and by their opponent to simulate how well the game is
+          going. Lastly, click the point on the rink where you would like to
+          shoot from, then make your prediction!
+        </div>
+        <Spacer type="row" size="large" />
+        <div
+          style={{
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            paddingBottom: "20px",
+          }}
+        >
+          To see how these models were created, from the data collection process
+          all the way to model validation and analysis, click{" "}
+          <a href="https://github.com/tangtan2/50_in_07/blob/master/python/src/notebooks/goal_success_classification.ipynb">
+            here
+          </a>{" "}
+          to view the jupyter notebook!
+        </div>
         <div
           style={{
             display: "flex",
@@ -239,7 +269,14 @@ export default class FormClassification extends React.Component<Props, State> {
               width: "450px",
             }}
           >
-            <div>Select your prediction parameters!</div>
+            <div
+              style={{
+                fontWeight: "bold",
+                borderBottom: "1px solid lightgrey",
+              }}
+            >
+              Select your prediction parameters!
+            </div>
             <Spacer type="row" size="large" />
             <div
               style={{

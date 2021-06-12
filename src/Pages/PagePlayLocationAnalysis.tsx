@@ -34,7 +34,17 @@ export default class PagePlayLocationAnalysis extends React.Component {
             expandable={false}
             initialIsExpanded={true}
           >
-            test
+            <div>
+              This visualization shows the points on the rink where certain
+              plays occured. You can filter the points by the opposing team as
+              well as the Maple Leafs player who participated in the play. There
+              are 9 different play types you can look at, blocked shots,
+              faceoffs, giveaways, goals, hits, missed shots, penalties, shots,
+              and takeaways. Blocked shots refer to any shots that were
+              physically blocked before reaching the goalie/net, missed shots
+              refer to shots that missed the goalie/net, and shots refer to
+              shots that were saved by the goalie.
+            </div>
           </Card>
           <Spacer size="xlarge" type="row" />
           <div

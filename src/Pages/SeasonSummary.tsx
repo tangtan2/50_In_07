@@ -20,7 +20,6 @@ const SeasonSummary = (props: Props) => {
             padding: "10px",
             display: "flex",
             flexDirection: "column",
-            fontWeight: "lighter",
           }}
         >
           <div
@@ -165,7 +164,6 @@ const SeasonSummary = (props: Props) => {
             padding: "10px",
             display: "flex",
             flexDirection: "column",
-            fontWeight: "lighter",
           }}
         >
           <div
