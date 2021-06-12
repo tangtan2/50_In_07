@@ -8,6 +8,7 @@ import SeasonSummary from "./SeasonSummary";
 import Dropdown, { Option } from "react-dropdown";
 import "../Shared/Dropdown.css";
 import APIClient from "../API/APIClient";
+import { Link } from "react-router-dom";
 
 declare global {
   interface Window {
@@ -153,9 +154,9 @@ export default class PageHome extends React.Component<Props, State> {
                 team, use the menu on the top right to navigate between{" "}
                 <b style={{ fontWeight: "bold" }}>
                   different visualizations of game, team, and player data, as
-                  well as a <a href="/predict">prediction demo</a> where you can
-                  simulate the results of different shots or predict the number
-                  of goals a player might score.
+                  well as a <Link to="/predict">prediction demo</Link> where you
+                  can simulate the results of different shots or predict the
+                  number of goals a player might score.
                 </b>
               </div>
             </div>
