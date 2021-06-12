@@ -18,6 +18,7 @@ const Menu = () => {
         right: 0,
         position: "absolute",
         color: "#212F3C",
+        zIndex: 1001,
       }}
     >
       <div
