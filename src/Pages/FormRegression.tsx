@@ -328,16 +328,18 @@ export default class FormRegression extends React.Component<Props, State> {
               Prediction Results
             </div>
             <Spacer type="row" size="xlarge" />
+            <div style={{ flex: 0.5 }} />
             <div
               style={{
                 width: "80%",
                 textAlign: "center",
-                marginTop: "40px",
                 whiteSpace: "normal",
               }}
             >
               {this.state.predictionResults}
             </div>
+            <div style={{ flex: 1 }} />
+            <Spacer type="row" size="xlarge" />
           </div>
         </div>
       </div>

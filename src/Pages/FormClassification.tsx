@@ -210,16 +210,14 @@ export default class FormClassification extends React.Component<Props, State> {
   }
 
   async handlePostClassificationSVMPrediction(data: PostClassificationType) {
-    const prediction: ClassificationPrediction = await APIClient.postClassificationSVM(
-      data
-    );
+    const prediction: ClassificationPrediction =
+      await APIClient.postClassificationSVM(data);
     return prediction;
   }
 
   async handlePostClassificationRFPrediction(data: PostClassificationType) {
-    const prediction: ClassificationPrediction = await APIClient.postClassificationRF(
-      data
-    );
+    const prediction: ClassificationPrediction =
+      await APIClient.postClassificationRF(data);
     return prediction;
   }
 
@@ -484,16 +482,18 @@ export default class FormClassification extends React.Component<Props, State> {
               Prediction Results
             </div>
             <Spacer type="row" size="xlarge" />
+            <div style={{ flex: 0.5 }} />
             <div
               style={{
                 width: "80%",
                 textAlign: "center",
-                marginTop: "80px",
                 whiteSpace: "normal",
               }}
             >
               {this.state.predictionResults}
             </div>
+            <div style={{ flex: 1 }} />
+            <Spacer type="row" size="xlarge" />
           </div>
         </div>
         <Spacer type="row" size="xlarge" />

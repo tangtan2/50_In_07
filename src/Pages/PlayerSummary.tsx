@@ -13,6 +13,7 @@ const PlayerSummary = (props: Props) => {
           style={{
             display: "flex",
             flexDirection: "row",
+            height: "350px",
           }}
         >
           <div

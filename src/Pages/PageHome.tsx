@@ -162,7 +162,7 @@ export default class PageHome extends React.Component<Props, State> {
           <div
             style={{
               display: "flex",
-              flexDirection: this.state.windowWidth > 1350 ? "row" : "column",
+              flexDirection: this.state.windowWidth > 1300 ? "row" : "column",
               justifyContent: "center",
             }}
           >
@@ -193,7 +193,7 @@ export default class PageHome extends React.Component<Props, State> {
               </Card>
             </div>
             <Spacer
-              type={this.state.windowWidth > 1000 ? "column" : "row"}
+              type={this.state.windowWidth > 1300 ? "column" : "row"}
               size="xlarge"
             />
             <div
