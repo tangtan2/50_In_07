@@ -145,13 +145,16 @@ export default class PageHome extends React.Component<Props, State> {
                 from a certain angle, having top talent like Auston Matthews,
                 John Tavares, and Mitch Marner. But also like Dany Heatley, the
                 Maple Leafs have never really lived up to their potential since
-                the late 1960's when they won their last Stanley Cup. Boasting a
-                young, fast, and agile team of skilled offensive players, but
-                lacking a consistent defense and goalie, it's no wonder the
-                Leafs have been able to dramatically win games by a huge margin
-                but also lose to better teams in the playoffs every year. If
-                you're interested in learning more about this enigma of a hockey
-                team, use the menu on the top right to navigate between{" "}
+                the late 1960's when they won their last Stanley Cup. I was
+                introduced to the NHL by a Maple Leafs fan about two years ago,
+                and was immediately intrigued by this team that boasts a young,
+                fast, and agile team of skilled offensive players, but lacks in
+                consistency, defense, and goaltending. So, I started working on
+                some data analysis and prediction models to help me learn more
+                about this team, its players, and its history. If you're like me
+                and want to learn more about the NHL team with the longest
+                Stanley Cup drought, use the menu on the top right to navigate
+                between{" "}
                 <b style={{ fontWeight: "bold" }}>
                   different visualizations of game, team, and player data, as
                   well as a <Link to="/predict">prediction demo</Link> where you
