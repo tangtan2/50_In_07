@@ -203,7 +203,7 @@ export default class FormRegression extends React.Component<Props, State> {
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "450px",
+              flexWrap: "wrap",
             }}
           >
             <div
@@ -219,6 +219,7 @@ export default class FormRegression extends React.Component<Props, State> {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                flexWrap: "wrap",
                 alignItems: "center",
               }}
             >
@@ -237,6 +238,7 @@ export default class FormRegression extends React.Component<Props, State> {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                flexWrap: "wrap",
                 alignItems: "center",
               }}
             >
@@ -255,6 +257,7 @@ export default class FormRegression extends React.Component<Props, State> {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                flexWrap: "wrap",
                 alignItems: "center",
               }}
             >
@@ -273,6 +276,7 @@ export default class FormRegression extends React.Component<Props, State> {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                flexWrap: "wrap",
                 alignItems: "center",
               }}
             >
@@ -291,6 +295,7 @@ export default class FormRegression extends React.Component<Props, State> {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                flexWrap: "wrap",
                 alignItems: "center",
               }}
             >
@@ -325,7 +330,9 @@ export default class FormRegression extends React.Component<Props, State> {
                 width: "250px",
                 border: "2px solid #1b4f72",
                 boxShadow: "2px 2px 1px 0.5px #1b4f72",
-                backgroundColor: "white",
+                backgroundColor: "#1b4f72",
+                fontWeight: "bold",
+                color: "white",
                 borderRadius: "5px",
                 fontSize: "12pt",
                 fontFamily: "Nunito Sans",

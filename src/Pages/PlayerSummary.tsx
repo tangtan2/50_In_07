@@ -13,7 +13,8 @@ const PlayerSummary = (props: Props) => {
           style={{
             display: "flex",
             flexDirection: "row",
-            height: "350px",
+            flexWrap: "wrap",
+            minHeight: "320px",
           }}
         >
           <div
@@ -26,7 +27,7 @@ const PlayerSummary = (props: Props) => {
                 borderRadius: "5px",
                 boxShadow: "2px 2px 1px 0.5px #1b4f72",
               }}
-              width="230px"
+              width="210px"
               src={props.playerStats.imageLink}
               alt="Player"
             />
